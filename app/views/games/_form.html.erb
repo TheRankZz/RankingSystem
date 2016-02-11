@@ -1,0 +1,55 @@
+<%= form_for(@game, multipart: true) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <% if !@game.nil? && !@game.new_record? %>
+        <%= link_to 'Abbrechen', game_path, :class => "btn btn-danger" %>
+    <% else %>
+        <%= link_to 'Abbrechen', games_path, :class => "btn btn-danger" %>
+    <% end %>
+
+    <%= f.submit "Speichern", :class => 'btn btn-primary' %>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-3">
+    <% if !@game.nil? && !@game.new_record? %>
+      <%= image_tag @game.image.url(:medium), :class => "img-rounded" %>
+    <% end %>
+    <%= f. file_field :image %>
+  </div>
+  <div class="col-md-8">
+
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :developer %>
+      <%= f.text_field :developer, :class => "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, :class => "form-control", :rows => "5" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :link %>
+      <%= f.text_field :link, :class => "form-control" %>
+    </div>
+  </div>
+</div>
+<% end %>

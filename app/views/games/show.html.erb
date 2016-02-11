@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to 'Zurück', games_path, :class => "btn btn-default" %> |
+    <%= link_to 'Bearbeiten', edit_game_path(@game), :class => "btn btn-warning" %>
+    <%= link_to 'Löschen', @game, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag @game.image.url(:medium), :class => "img-rounded" %>
+  </div>
+  <div class="col-md-8">
+    <h2><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
+    <p>
+      <%= @game.description %>
+    </p>
+    <%= link_to 'Hier kaufen',  @game.link, :class => "btn btn-default", :target => "blank" %>
+  </div>
+</div>
