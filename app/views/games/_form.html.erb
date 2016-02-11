@@ -28,6 +28,8 @@
     <% if !@game.nil? && !@game.new_record? %>
       <%= image_tag @game.image.url(:medium), :class => "img-rounded" %>
     <% end %>
+    <br/>
+    <br/>
     <%= f. file_field :image %>
   </div>
   <div class="col-md-8">
