@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212114211) do
+ActiveRecord::Schema.define(version: 20160212130813) do
 
   create_table "game_genres", force: :cascade do |t|
     t.integer  "game_id"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20160212114211) do
 
   add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id"
   add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id"
+
+  create_table "game_platforms", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "platform_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "game_platforms", ["game_id"], name: "index_game_platforms_on_game_id"
+  add_index "game_platforms", ["platform_id"], name: "index_game_platforms_on_platform_id"
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -38,6 +48,13 @@ ActiveRecord::Schema.define(version: 20160212114211) do
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string   "name"
+    t.string   "producer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

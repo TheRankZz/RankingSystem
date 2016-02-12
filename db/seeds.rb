@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Genre.create name: 'Actionspiel'
-Genre.create name: 'Rollenspiel'
-Genre.create name: 'Ego-Shooter'
+#Genre.create name: 'Actionspiel'
+#Genre.create name: 'Rollenspiel'
+#Genre.create name: 'Ego-Shooter'
+
+Platform.create name: 'Playstation 4'
+Platform.create name: 'XBox One'

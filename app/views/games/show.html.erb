@@ -24,6 +24,10 @@
     <% @game.genres.each do |g| %>
       <%= g.name %>
     <% end %>
+    <strong>Platform:</strong>
+    <% @game.platforms.each do |g| %>
+        <%= g.name %>
+    <% end %>
   </div>
   <div class="row">
     <div style="padding:10px;" class="col-md-12">

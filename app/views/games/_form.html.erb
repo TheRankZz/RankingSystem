@@ -57,6 +57,11 @@
     <div>
       <%= f.collection_select :genre_ids, Genre.all, :id, :name, {selected: @game.genre_ids }, multiple: true %>
     </div>
+
+    <div>
+      <%= f.collection_select :platform_ids, Platform.all, :id, :name, {selected: @game.platform_ids }, multiple: true %>
+    </div>
+
   </div>
 </div>
 <% end %>

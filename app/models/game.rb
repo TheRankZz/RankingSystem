@@ -8,6 +8,9 @@ class Game < ActiveRecord::Base
   has_many :game_genres
   has_many :genres, through: :game_genres
 
+  has_many :game_platforms
+  has_many :platforms, through: :game_platforms
+
   # Auskommentiert, weil es unter Windows noch Probleme gibt.
   #validates_attachment :image, :presence => true,
   #                     :content_type => { :content_type => /\Aimage\/.*\Z/ }
