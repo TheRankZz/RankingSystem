@@ -1,10 +1,13 @@
 class Game < ActiveRecord::Base
   has_attached_file :image, styles: {
-      thumb: '100x100>',
-      square: '200x200#',
-      medium: '300x300>'
+      thumb: '48x48#',
+      square: '128x128#',
+      medium: '256x256#'
   }
 
-  validates_attachment :image, :presence => true,
-                       :content_type => { :content_type => /\Aimage\/.*\Z/ }
+  # Auskommentiert, weil es unter Windows noch Probleme gibt.
+  #validates_attachment :image, :presence => true,
+  #                     :content_type => { :content_type => /\Aimage\/.*\Z/ }
+
+  do_not_validate_attachment_file_type :image
 end
