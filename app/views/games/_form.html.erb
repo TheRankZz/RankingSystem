@@ -52,6 +52,11 @@
       <%= f.label :link %>
       <%= f.text_field :link, :class => "form-control" %>
     </div>
+
+
+    <div>
+      <%= f.collection_select :genre_ids, Genre.all, :id, :name, {selected: @game.genre_ids }, multiple: true %>
+    </div>
   </div>
 </div>
 <% end %>

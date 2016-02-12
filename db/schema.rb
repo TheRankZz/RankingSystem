@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211185515) do
+ActiveRecord::Schema.define(version: 20160212114211) do
+
+  create_table "game_genres", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id"
+  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id"
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -24,6 +34,12 @@ ActiveRecord::Schema.define(version: 20160211185515) do
     t.string   "link"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

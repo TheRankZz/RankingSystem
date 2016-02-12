@@ -20,7 +20,10 @@
     <%= link_to 'Hier kaufen',  @game.link, :class => "btn btn-default", :target => "blank" %>
     <br/>
     <br/>
-    <strong>Bewertung:</strong>
+    <strong>Genre:</strong>
+    <% @game.genres.each do |g| %>
+      <%= g.name %>
+    <% end %>
   </div>
   <div class="row">
     <div style="padding:10px;" class="col-md-12">

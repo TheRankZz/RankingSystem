@@ -5,6 +5,9 @@ class Game < ActiveRecord::Base
       medium: '256x256#'
   }
 
+  has_many :game_genres
+  has_many :genres, through: :game_genres
+
   # Auskommentiert, weil es unter Windows noch Probleme gibt.
   #validates_attachment :image, :presence => true,
   #                     :content_type => { :content_type => /\Aimage\/.*\Z/ }
