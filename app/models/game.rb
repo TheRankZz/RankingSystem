@@ -16,4 +16,10 @@ class Game < ActiveRecord::Base
   #                     :content_type => { :content_type => /\Aimage\/.*\Z/ }
 
   do_not_validate_attachment_file_type :image
+
+
+
+  def self.search(search)
+    where("title LIKE ? OR description LIKE ? OR developer LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end

@@ -9,29 +9,68 @@
 </div>
 <br/>
 <div class="row">
-  <div class="col-md-3">
-    <%= image_tag @game.image.url(:medium), :class => "img-rounded" %>
+  <div class="col-md-4">
+    <%= image_tag @game.image.url(:medium), :class => "img-rounded img-center" %>
   </div>
   <div class="col-md-8">
     <h2><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
+
+
+    <div class="rating">
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      | <a href="#">Neue Spielbewertung</a>
+    </div>
+
+
     <p>
       <%= @game.description %>
     </p>
-    <%= link_to 'Hier kaufen',  @game.link, :class => "btn btn-default", :target => "blank" %>
-    <br/>
-    <br/>
     <strong>Genre:</strong>
     <% @game.genres.each do |g| %>
       <%= g.name %>
     <% end %>
+    <br/>
     <strong>Platform:</strong>
     <% @game.platforms.each do |g| %>
         <%= g.name %>
     <% end %>
+    <br/>
+    <br/>
+    <%= link_to 'Hier kaufen',  @game.link, :class => "btn btn-default", :target => "blank" %>
   </div>
-  <div class="row">
-    <div style="padding:10px;" class="col-md-12">
-      [Hier die Bewertungen mit den Kommentaren]
+</div>
+<br/>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="panel panel-white post panel-shadow">
+      <div class="post-heading">
+        <div class="pull-left">
+
+        </div>
+        <div class="pull-left meta">
+          <div class="title h5">
+            <div class="rating">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              |
+              <b>Ein Spiel mit vielen Ecken und Kanten- aber es lohnt sich</b>
+            </div>
+          </div>
+          <h6 class="text-muted time">22. Januar 2016 | Von Lennart Giesen</h6>
+        </div>
+      </div>
+      <div class="post-description">
+        <p>Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers</p>
+      </div>
     </div>
+
   </div>
 </div>

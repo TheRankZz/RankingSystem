@@ -53,13 +53,14 @@
       <%= f.text_field :link, :class => "form-control" %>
     </div>
 
-
-    <div>
-      <%= f.collection_select :genre_ids, Genre.all, :id, :name, {selected: @game.genre_ids }, multiple: true %>
+    <div class="form-group">
+      <%= f.label :genre %>
+      <%= f.collection_select :genre_ids, Genre.all, :id, :name, {selected: @game.genre_ids }, multiple: true, :class => 'form-control' %>
     </div>
 
-    <div>
-      <%= f.collection_select :platform_ids, Platform.all, :id, :name, {selected: @game.platform_ids }, multiple: true %>
+    <div class="form-group">
+      <%= f.label :platform %>
+      <%= f.collection_select :platform_ids, Platform.all, :id, :name, {selected: @game.platform_ids }, multiple: true, :class => 'form-control' %>
     </div>
 
   </div>

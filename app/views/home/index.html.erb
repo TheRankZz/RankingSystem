@@ -1,8 +1,19 @@
+<%= form_tag(games_path, :method => "get", id: "search-form") do %>
 
 
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Willkommen</h1>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="input-group form-group-lg">
+      <%= text_field_tag :search, params[:search], placeholder: "Suchen nach...", :class => "form-control" %>
+      <span class="input-group-btn">
+        <%= submit_tag "Suchen", :class => "btn btn-default btn-lg" %>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 
-
-<div class="starter-template">
-  <h1>Willkommen</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-</div>
+<% end %>
