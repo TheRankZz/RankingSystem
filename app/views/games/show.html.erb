@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+    <p class="alert alert-success" role="alert" id="notice"><%= notice %></p>
+<% end %>
 
 <div class="row">
   <div class="col-md-12">
@@ -13,15 +15,14 @@
     <%= image_tag @game.image.url(:medium), :class => "img-rounded img-center" %>
   </div>
   <div class="col-md-8">
-    <h2><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
+    <h2 class="no-margin-top"><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
 
 
     <div class="rating">
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <% for i in 1..4 %>
+          <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+      <% end %>
+      <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span>
       | <a href="#">Neue Spielbewertung</a>
     </div>
 
@@ -31,12 +32,12 @@
     </p>
     <strong>Genre:</strong>
     <% @game.genres.each do |g| %>
-      <%= g.name %>
+      <%= g.name %> |
     <% end %>
     <br/>
     <strong>Platform:</strong>
     <% @game.platforms.each do |g| %>
-        <%= g.name %>
+        <%= g.name %> |
     <% end %>
     <br/>
     <br/>
@@ -48,7 +49,7 @@
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-white post panel-shadow">
+    <div class="panel panel-white post">
       <div class="post-heading">
         <div class="pull-left">
 
@@ -56,19 +57,48 @@
         <div class="pull-left meta">
           <div class="title h5">
             <div class="rating">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span>
               |
               <b>Ein Spiel mit vielen Ecken und Kanten- aber es lohnt sich</b>
             </div>
           </div>
-          <h6 class="text-muted time">22. Januar 2016 | Von Lennart Giesen</h6>
+          <h6 class="text-muted time">22.01.2016 | Von Lennart Giesen</h6>
         </div>
       </div>
       <div class="post-description">
-        <p>Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers</p>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-white post">
+      <div class="post-heading">
+        <div class="pull-left">
+
+        </div>
+        <div class="pull-left meta">
+          <div class="title h5">
+            <div class="rating">
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+              |
+              <b>Eigentlich als Lückenfüller gekauft</b>
+            </div>
+          </div>
+          <h6 class="text-muted time">31.12.2015 | Von Juluis Wessing</h6>
+        </div>
+      </div>
+      <div class="post-description">
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        </p>
       </div>
     </div>
 

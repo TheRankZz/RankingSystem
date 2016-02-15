@@ -3,12 +3,11 @@
   box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
 }
 .panel-white {
-  border: 1px solid #dddddd;
+  border: 1px solid #dddddd !important;
 }
 .panel-white  .panel-heading {
   color: #333;
   background-color: #fff;
-  border-color: #2c3e50;
 }
 .panel-white  .panel-footer {
   background-color: #fff;
@@ -16,7 +15,7 @@
 }
 
 .post .post-heading {
-  height: 95px;
+  height: 85px;
   padding: 15px 15px;
 }
 .post .post-heading .avatar {
@@ -44,6 +43,7 @@
 }
 .post .post-description {
   padding: 15px;
+  padding-top:0px;
 }
 .post .post-description p {
   font-size: 14px;

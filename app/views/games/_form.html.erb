@@ -1,7 +1,7 @@
 <%= form_for(@game, multipart: true) do |f| %>
   <% if @game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+    <div class="alert alert-danger" role="alert" id="error_explanation">
+      <strong><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</strong>
       <ul>
       <% @game.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,7 +12,6 @@
 
 <div class="row">
   <div class="col-md-12">
-
     <% if !@game.nil? && !@game.new_record? %>
         <%= link_to 'Abbrechen', game_path, :class => "btn btn-danger" %>
     <% else %>
@@ -32,7 +31,7 @@
     <br/>
     <%= f. file_field :image %>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
 
     <div class="form-group">
       <%= f.label :title %>

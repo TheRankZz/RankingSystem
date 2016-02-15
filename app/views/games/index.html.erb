@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% if notice.present? %>
+<p class="alert alert-info" role="alert" id="notice"><%= notice %></p>
+<% end %>
 <h1>Listing Games</h1>
 
 <table class="table table-hover table-striped">

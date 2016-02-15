@@ -19,7 +19,17 @@ nav.navbar-custom {
 
 div.rating {
   margin-bottom: 10px;
-  .glyphicon-star {
+
+  .glyphicon-star.yellow {
     color: #f1c40f;
   }
+
+  .glyphicon-star.grew {
+    color: #bdc3c7;
+  }
+
+}
+
+.no-margin-top {
+  margin-top:0;
 }
