@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :lockable
 
 
+  has_many :ratings
+  has_many :games, through: :ratings
 end

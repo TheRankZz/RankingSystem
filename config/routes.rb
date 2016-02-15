@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :ratings
+  get 'ratings/edit'
+
+  get 'ratings/new'
+
+  get 'ratings/index'
+
+  get 'ratings/show'
+
+  get 'ratings/delete'
+
   devise_for :users
   resources :games
   get 'home/index'

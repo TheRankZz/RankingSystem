@@ -11,6 +11,9 @@ class Game < ActiveRecord::Base
   has_many :game_platforms
   has_many :platforms, through: :game_platforms
 
+  has_many :ratings
+  has_many :users, through: :ratings
+
   # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
   #validates_attachment :image, :presence => true,
   #                     :content_type => { :content_type => /\Aimage\/.*\Z/ }
@@ -25,7 +28,5 @@ class Game < ActiveRecord::Base
     where("title LIKE ? OR description LIKE ? OR developer LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
-  def self.stars()
-    0..4
-  end
+
 end
