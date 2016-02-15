@@ -1,7 +1,3 @@
-<% if notice.present? %>
-    <p class="alert alert-success" role="alert" id="notice"><%= notice %></p>
-<% end %>
-
 <div class="row">
   <div class="col-md-12">
     <%= link_to 'Zurück', games_path, :class => "btn btn-default" %> |
@@ -17,16 +13,13 @@
   <div class="col-md-8">
     <h2 class="no-margin-top"><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
 
-
     <div class="rating">
       <% for i in 1..4 %>
           <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
       <% end %>
       <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span>
-      | <a href="#">Neue Spielbewertung</a>
+      | <%= link_to 'Neue Spielbewertung', new_rating_path(:game_id => @game.id) %>
     </div>
-
-
     <p>
       <%= @game.description %>
     </p>
@@ -46,61 +39,6 @@
 </div>
 <br/>
 
-<div class="row">
-  <div class="col-md-12">
-
-    <div class="panel panel-white post">
-      <div class="post-heading">
-        <div class="pull-left">
-
-        </div>
-        <div class="pull-left meta">
-          <div class="title h5">
-            <div class="rating">
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span>
-              |
-              <b>Ein Spiel mit vielen Ecken und Kanten- aber es lohnt sich</b>
-            </div>
-          </div>
-          <h6 class="text-muted time">22.01.2016 | Von Lennart Giesen</h6>
-        </div>
-      </div>
-      <div class="post-description">
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        </p>
-      </div>
-    </div>
-    <div class="panel panel-white post">
-      <div class="post-heading">
-        <div class="pull-left">
-
-        </div>
-        <div class="pull-left meta">
-          <div class="title h5">
-            <div class="rating">
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-              |
-              <b>Eigentlich als Lückenfüller gekauft</b>
-            </div>
-          </div>
-          <h6 class="text-muted time">31.12.2015 | Von Juluis Wessing</h6>
-        </div>
-      </div>
-      <div class="post-description">
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-        </p>
-      </div>
-    </div>
-
-  </div>
+<div style="padding:0;" class="container">
+    <%= render :partial => @game.ratings.order(created_at: :desc) %>
 </div>

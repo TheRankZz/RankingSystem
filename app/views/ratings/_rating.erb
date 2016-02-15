@@ -1,0 +1,26 @@
+<div class="panel panel-white post">
+  <div class="post-heading">
+    <div class="pull-right">
+      <%= link_to 'Löschen', rating, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <div class="pull-left meta">
+      <div class="title h5">
+        <div class="rating">
+
+          <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span>
+
+          |
+          <b><%= rating.title %></b>
+        </div>
+      </div>
+      <h6 class="text-muted time"><%= rating.created_at %> | <%= rating.user.name %></h6>
+    </div>
+  </div>
+  <div class="post-description">
+    <p><%= rating.description %></p>
+  </div>
+</div>
