@@ -1,0 +1,40 @@
+<%= form_tag(search_path, :method => "get", id: "search-form") do %>
+    <div class="row page-header">
+      <div class="col-md-2">
+        <h2>Suche</h2>
+      </div>
+      <div class="col-md-8">
+        <div class="input-group form-group-lg">
+          <%= text_field_tag :search, params[:search], placeholder: "Nach Spielen suchen...", :class => "form-control" %>
+          <span class="input-group-btn">
+            <%= button_tag(type: 'submit', class: "btn btn-default btn-lg") do %>
+              <span class="glyphicon glyphicon-search"></span>
+            <% end %>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+<% end %>
+
+<% if !@games.nil? %>
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead>
+    <tr>
+      <th>Spiel</th>
+      <th>Entwickler</th>
+      <th>Bewertung</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @games.each do |game| %>
+        <tr>
+          <td><%= link_to game.title, game %></td>
+          <td><%= game.developer %></td>
+          <td></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>

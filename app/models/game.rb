@@ -1,8 +1,7 @@
 class Game < ActiveRecord::Base
   has_attached_file :image, styles: {
       thumb: '48x48#',
-      square: '128x128#',
-      medium: '256x256#'
+      medium: '250x300#'
   }
 
   has_many :game_genres
@@ -25,8 +24,8 @@ class Game < ActiveRecord::Base
   validates :genres, :platforms, :title, :developer, presence: true
 
   def self.search(search)
-    where("title LIKE ? OR description LIKE ? OR developer LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    joins(:genres).where("title LIKE ? OR description LIKE ? OR developer LIKE ? OR genres.name LIKE ?",
+                         "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+        .distinct
   end
-
-
 end

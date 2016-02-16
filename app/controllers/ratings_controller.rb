@@ -1,6 +1,6 @@
 class RatingsController < ApplicationController
-  before_action :authenticate_user!, only: [:update, :destroy, :new]
-  before_action :set_rating, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:destroy, :new]
+  before_action :set_rating, only: [:destroy]
 
 
   # GET /ratings/new

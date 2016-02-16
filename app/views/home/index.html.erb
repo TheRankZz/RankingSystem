@@ -1,21 +1,17 @@
-<%= form_tag(games_path, :method => "get", id: "search-form") do %>
 
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h1>Willkommen</h1>
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+    <h2>Willkommen</h2>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    <hr>
   </div>
-  <div class="col-md-8 col-md-offset-2">
-    <div class="input-group form-group-lg">
-      <%= text_field_tag :search, params[:search], placeholder: "Suchen nach...", :class => "form-control" %>
-      <span class="input-group-btn">
-        <%= button_tag(type: 'submit', class: "btn btn-default btn-lg") do %>
-          <span class="glyphicon glyphicon-search"></span>
-        <% end %>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-
-<% end %>
+  <div class="col-md-4 col-md-offset-2">
+    <h4>Neu</h4>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div class="col-md-4">
+    <h4>Top 5</h4>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </div>
+</div>

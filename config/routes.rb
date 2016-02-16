@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/index'
+
   resources :ratings
 
   get 'ratings/new'
@@ -15,7 +17,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'search/' => 'search#index'
+  get 'home/' => 'home#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
