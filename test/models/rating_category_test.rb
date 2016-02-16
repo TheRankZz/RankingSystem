@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RateTypeTest < ActiveSupport::TestCase
+class RatingCategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
