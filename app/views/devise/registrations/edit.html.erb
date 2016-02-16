@@ -1,44 +1,50 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <b>Test</b>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-    <div class="field">
+<div class="container form-signin">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <h2 class="form-signin-heading">Konto bearbeiten</h2>
+      <hr/>
+      <%= devise_error_messages! %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+      <br/>
       <%= f.label :name %><br />
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :class => "form-control" %>
+      <br/>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div class="alert alert-warning">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <br/>
+      <% end %>
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+      <br/>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+      <br/>
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" %>
+      <br/>
+      <%= f.submit "Update", :class => "btn btn-default btn-block"%>
+      <% end %>
+      <hr/>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteModal">
+        Account löschen
+      </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" data-backdrop="static"  aria-labelledby="deleteModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Meldung</h4>
+      </div>
+      <div class="modal-body">
+        <p>Sind Sie sicher?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+        <%= button_to "Account löschen", registration_path(resource_name), method: :delete, :class => "btn btn-danger" %>
+      </div>
     </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

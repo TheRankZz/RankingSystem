@@ -1,33 +1,26 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="container form-signin">
+  <h2 class="form-signin-heading">Registrieren</h2>
+  <hr/>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <%= f.label :email %>
+  <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+  <br/>
+  <%= f.label :name %><br />
+  <%= f.text_field :name, :class => "form-control" %>
+  <br/>
+  <%= f.label :password %>
+  <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+  <br/>
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+  <br/>
+  <%= f.submit "Registrieren", :class => "btn btn-default btn-block" %>
+  <br/>
+  <%= render "devise/shared/links" %>
+</div>
 <% end %>
 
-<%= render "devise/shared/links" %>

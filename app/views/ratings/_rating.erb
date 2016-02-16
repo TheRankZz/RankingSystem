@@ -1,5 +1,5 @@
-<div class="panel panel-white post">
-  <div class="post-heading">
+<div class="panel panel-white rating">
+  <div class="rating-heading">
     <div class="pull-right">
       <%= link_to 'Löschen', rating, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
@@ -17,10 +17,16 @@
           <b><%= rating.title %></b>
         </div>
       </div>
-      <h6 class="text-muted time"><%= rating.created_at %> | <%= rating.user.name %></h6>
+      <h6 class="text-muted time"><%= rating.created_at %> |
+            <% if !rating.user.nil? %>
+              <%= rating.user.name %>
+            <% else %>
+              User gelöscht!
+            <% end %>
+      </h6>
     </div>
   </div>
-  <div class="post-description">
+  <div class="rating-description">
     <p><%= rating.description %></p>
   </div>
 </div>

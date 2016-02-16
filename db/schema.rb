@@ -65,6 +65,12 @@ ActiveRecord::Schema.define(version: 20160216111319) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rate_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rating_categories", force: :cascade do |t|
     t.integer  "rating_id"
     t.integer  "category_id"
