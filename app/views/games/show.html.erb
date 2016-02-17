@@ -12,7 +12,8 @@
   </div>
   <div class="col-md-8">
     <h2 class="no-margin-top"><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
-    <%= rating_for @game, "Gesamt",  { readonly: true} %>
+    <%= rating_for @game, "Gesamt",  { readonly: true, targetFormat: '{score}' } %> | <%= render 'myrating' %>
+    <br/>
     <br/>
     <p>
       <%= @game.description %>
@@ -34,6 +35,9 @@
 <br/>
 
 
-Gesamt  : <%= rating_for @game, "Gesamt" %>
-Umfang : <%= rating_for @game, "Umfang" %>
+Gesamt  : <%= rating_for @game, "Gesamt", { star: 5, cancel: true, readonly: true } %>
+<br/>
+Umfang : <%= rating_for @game, "Umfang", { star: 5, cancel: true, readonly: true } %>
+
+
 

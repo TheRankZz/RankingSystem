@@ -36,7 +36,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'paperclip'
 gem 'devise'
-gem 'ratyrate'
+gem 'ratyrate', '1.2.2.alpha'
 
 
 

@@ -11,8 +11,8 @@ class Game < ActiveRecord::Base
   has_many :platforms, through: :game_platforms
 
 
-
-
+  TYPES = ["Grafik", "Umfang", "Gesamt"]
+  ratyrate_rateable *TYPES
 
 
   # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
@@ -26,15 +26,16 @@ class Game < ActiveRecord::Base
   validates :genres, :platforms, :title, :developer, presence: true
 
 
-
-
-  ratyrate_rateable "Grafik", "Umfang", "Gesamt"
-
-
-
   def self.search(search)
     joins(:genres).where("title LIKE ? OR description LIKE ? OR developer LIKE ? OR genres.name LIKE ?",
                          "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
         .distinct
+  end
+
+
+
+  def self.orderByRating()
+    joins(:rating_caches).where(:cacheable_id => Game)
+        .order('rating_caches.avg DESC')
   end
 end
