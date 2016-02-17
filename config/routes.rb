@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   get 'search/index'
-
-
-  get 'ratings/new'
-  get 'ratings/delete'
 
   devise_for :users
   resources :games

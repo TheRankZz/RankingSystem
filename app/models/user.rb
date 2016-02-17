@@ -4,7 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable
 
-
-  has_many :ratings
-  has_many :games, through: :ratings
+  ratyrate_rater
 end
