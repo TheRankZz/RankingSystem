@@ -25,6 +25,13 @@ class Game < ActiveRecord::Base
   validates :link, format: %r|\Ahttp(s?)://www.amazon.de/|
   validates :genres, :platforms, :title, :developer, presence: true
 
+
+
+
+  ratyrate_rateable "Grafik", "Umfang", "Gesamt"
+
+
+
   def self.search(search)
     joins(:genres).where("title LIKE ? OR description LIKE ? OR developer LIKE ? OR genres.name LIKE ?",
                          "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")

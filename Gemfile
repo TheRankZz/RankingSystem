@@ -36,6 +36,8 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'paperclip'
 gem 'devise'
+gem 'ratyrate'
+
 
 
 group :development, :test do

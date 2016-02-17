@@ -12,12 +12,8 @@
   </div>
   <div class="col-md-8">
     <h2 class="no-margin-top"><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
-
-    <div class="rating">
-      <% for i in 1..4 %>
-          <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
-      <% end %>
-      <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span></div>
+    <%= rating_for @game, "Gesamt",  { readonly: true} %>
+    <br/>
     <p>
       <%= @game.description %>
     </p>
@@ -36,4 +32,8 @@
   </div>
 </div>
 <br/>
+
+
+Gesamt  : <%= rating_for @game, "Gesamt" %>
+Umfang : <%= rating_for @game, "Umfang" %>
 

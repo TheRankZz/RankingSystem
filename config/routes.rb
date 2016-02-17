@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   get 'search/index'
 
   devise_for :users
