@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   get 'search/index'
 
-  resources :ratings
-
-  get 'ratings/new'
-  get 'ratings/delete'
-
   devise_for :users
   resources :games
   get 'home/index'

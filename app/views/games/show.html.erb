@@ -17,9 +17,7 @@
       <% for i in 1..4 %>
           <span class="glyphicon glyphicon-star yellow" aria-hidden="true"></span>
       <% end %>
-      <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span>
-      | <%= link_to 'Neue Spielbewertung', new_rating_path(:game_id => @game.id) %>
-    </div>
+      <span class="glyphicon glyphicon-star grew" aria-hidden="true"></span></div>
     <p>
       <%= @game.description %>
     </p>
@@ -39,6 +37,3 @@
 </div>
 <br/>
 
-<div style="padding:0;" class="container">
-    <%= render :partial => @game.ratings.order(created_at: :desc) %>
-</div>
