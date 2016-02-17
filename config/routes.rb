@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'search/index'
 
-  resources :ratings
 
   get 'ratings/new'
   get 'ratings/delete'

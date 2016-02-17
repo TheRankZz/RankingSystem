@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160216111319) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "game_genres", force: :cascade do |t|
     t.integer  "game_id"
     t.integer  "genre_id"
@@ -63,23 +57,6 @@ ActiveRecord::Schema.define(version: 20160216111319) do
     t.string   "producer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "rating_categories", force: :cascade do |t|
-    t.integer  "rating_id"
-    t.integer  "category_id"
-    t.integer  "score"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "game_id"
-    t.integer  "user_id"
-    t.text     "description"
-    t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
