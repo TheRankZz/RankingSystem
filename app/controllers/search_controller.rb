@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  def index
+  def result
     if params[:search]
       @games = Game.search(params[:search])
     end

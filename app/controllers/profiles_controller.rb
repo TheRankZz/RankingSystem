@@ -1,8 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-
-
   # GET /profiles/new
   def new
     if !current_user.profile.nil?

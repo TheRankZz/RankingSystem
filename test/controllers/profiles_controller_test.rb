@@ -6,7 +6,7 @@ class ProfilesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :result
     assert_response :success
     assert_not_nil assigns(:profiles)
   end
