@@ -1,0 +1,49 @@
+<% if user_signed_in? %>
+    <!-- Button trigger modal -->
+    <a href="#" data-toggle="modal" data-target="#myModal">
+      Meine Bewertung
+    </a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static"  aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Meine Bewertung</h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-md-3 col-md-offset-2"><strong>Gesamt:</strong></div>
+              <div class="col-md-4">
+                <%= rating_for_user @game, current_user ,"GESAMT", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col-md-3 col-md-offset-2"><strong>Spieldesign:</strong></div>
+              <div class="col-md-4">
+                <%= rating_for_user @game, current_user, "SPIELDESIGN", { star: 5, cancel: true, readonly: false, cancel_place: 'right'  } %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-md-offset-2"><strong>Story/Atmosphäre:</strong></div>
+              <div class="col-md-4">
+                <%= rating_for_user @game, current_user, "STORY", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 col-md-offset-2"><strong>Umfang:</strong></div>
+              <div class="col-md-4">
+                <%= rating_for_user @game, current_user, "UMFANG", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <%= link_to 'OK', @game, :class => 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :profiles
+=======
+  post '/rate' => 'rater#create', :as => 'rate'
+>>>>>>> development
   get 'search/index'
 
   devise_for :users

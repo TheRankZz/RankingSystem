@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead>
+    <tr>
+      <% if !search %>
+      <th>Rang</th>
+      <% end %>
+      <th>Spiel</th>
+      <th>Entwickler</th>
+      <th>Bewertung</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @games.each do |game| %>
+        <tr>
+          <% if !search %>
+          <td></td>
+          <% end %>
+          <td><%= link_to game.title, game %></td>
+          <td><%= game.developer %></td>
+          <td><%= rating_for game, "GESAMT",  { readonly: true} %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
