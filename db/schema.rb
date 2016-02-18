@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216111319) do
+ActiveRecord::Schema.define(version: 20160218100103) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.boolean  "notify"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["game_id"], name: "index_comments_on_game_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "game_genres", force: :cascade do |t|
     t.integer  "game_id"
@@ -57,6 +75,23 @@ ActiveRecord::Schema.define(version: 20160216111319) do
     t.string   "producer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rating_categories", force: :cascade do |t|
+    t.integer  "rating_id"
+    t.integer  "category_id"
+    t.integer  "score"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.text     "description"
+    t.string   "title"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
