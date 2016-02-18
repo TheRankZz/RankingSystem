@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'comment/new'
+
+  get 'comment/destroy'
+
   get 'search/index'
 
 
-  get 'ratings/new'
-  get 'ratings/delete'
+  post 'comment/new' => 'comment#create'
 
   devise_for :users
   resources :games
