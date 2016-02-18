@@ -22,6 +22,10 @@
     <p>
       <%= @game.description %>
     </p>
+    <p>
+      <strong>ReleaseDate:</strong>
+      <%= @game.releaseDate %>
+    </p>
     <strong>Genre:</strong>
     <% @game.genres.each do |g| %>
       <%= g.name %> |
