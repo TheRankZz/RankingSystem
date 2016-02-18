@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160218110401) do
-=======
-ActiveRecord::Schema.define(version: 20160217182529) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -24,13 +21,6 @@ ActiveRecord::Schema.define(version: 20160217182529) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
->>>>>>> development
 
   create_table "game_genres", force: :cascade do |t|
     t.integer  "game_id"
@@ -86,7 +76,6 @@ ActiveRecord::Schema.define(version: 20160217182529) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "profiles", force: :cascade do |t|
     t.string   "username"
     t.string   "firstname"
@@ -98,7 +87,8 @@ ActiveRecord::Schema.define(version: 20160217182529) do
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-=======
+  end
+
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -123,24 +113,6 @@ ActiveRecord::Schema.define(version: 20160217182529) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
-
-  create_table "rating_categories", force: :cascade do |t|
-    t.integer  "rating_id"
-    t.integer  "category_id"
-    t.integer  "score"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "game_id"
-    t.integer  "user_id"
-    t.text     "description"
-    t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
->>>>>>> development
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
