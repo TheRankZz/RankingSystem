@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216111319) do
+ActiveRecord::Schema.define(version: 20160218110401) do
 
   create_table "game_genres", force: :cascade do |t|
     t.integer  "game_id"
@@ -57,6 +57,19 @@ ActiveRecord::Schema.define(version: 20160216111319) do
     t.string   "producer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "username"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|
