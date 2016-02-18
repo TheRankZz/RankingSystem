@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160218110401) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+ActiveRecord::Schema.define(version: 20160218125233) do
 
   create_table "game_genres", force: :cascade do |t|
     t.integer  "game_id"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160218110401) do
     t.string   "link"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.date     "releaseDate"
   end
 
   create_table "genres", force: :cascade do |t|
