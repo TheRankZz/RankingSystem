@@ -13,6 +13,9 @@ class Game < ActiveRecord::Base
   has_many :ratings
   has_many :users, through: :ratings
 
+  has_many :comments
+
+
   # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
   #validates_attachment :image, :presence => true,
   #                     :content_type => { :content_type => /\Aimage\/.*\Z/ }
