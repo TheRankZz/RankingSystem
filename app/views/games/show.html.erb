@@ -1,3 +1,4 @@
+<% @page_title = "Game" %>
 <div class="row">
   <div class="col-md-12">
     <%= link_to 'Zurück', games_path, :class => "btn btn-default" %> |
@@ -22,10 +23,10 @@
     <p>
       <%= @game.description %>
     </p>
-    <p>
-      <strong>ReleaseDate:</strong>
-      <%= @game.releaseDate %>
-    </p>
+
+    <strong>ReleaseDate:</strong>
+    <%= @game.releaseDate %>
+    <br/>
     <strong>Genre:</strong>
     <% @game.genres.each do |g| %>
       <%= g.name %> |
