@@ -11,7 +11,7 @@ class Game < ActiveRecord::Base
   has_many :platforms, through: :game_platforms
 
 
-  TYPES = ["Grafik", "Umfang", "Gesamt"]
+  TYPES = ["GESAMT" , "UMFANG", "STORY", "SPIELDESIGN" ]
   ratyrate_rateable *TYPES
 
 

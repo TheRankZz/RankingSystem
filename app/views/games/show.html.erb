@@ -9,10 +9,29 @@
 <div class="row">
   <div class="col-md-4">
     <%= image_tag @game.image.url(:medium), :class => "img-rounded img-center" %>
+    <hr/>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-5"><strong>Spieldesign:</strong></div>
+      <div class="col-xs-12 col-sm-12 col-md-5">
+        <%= rating_for @game, "SPIELDESIGN", { star: 5, cancel: true, readonly: true } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-5"><strong>Story/Atmosphäre:</strong></div>
+      <div class="col-xs-12 col-sm-12 col-md-5">
+        <%= rating_for @game, "STORY", { star: 5, cancel: true, readonly: true } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-5"><strong>Umfang:</strong></div>
+      <div class="col-xs-12 col-sm-12 col-md-5">
+        <%= rating_for @game, "UMFANG", { star: 5, cancel: true, readonly: true } %>
+      </div>
+    </div>
   </div>
   <div class="col-md-8">
     <h2 class="no-margin-top"><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
-    <%= rating_for @game, "Gesamt",  { readonly: true, targetFormat: '{score}' } %> | <%= render 'myrating' %>
+    <%= rating_for @game, "GESAMT",  { readonly: true, targetFormat: '{score}' } %> | <%= render 'myrating' %>
     <br/>
     <br/>
     <p>
@@ -32,12 +51,7 @@
     <%= link_to 'Hier kaufen',  @game.link, :class => "btn btn-default", :target => "blank" %>
   </div>
 </div>
-<br/>
-
-
-Gesamt  : <%= rating_for @game, "Gesamt", { star: 5, cancel: true, readonly: true } %>
-<br/>
-Umfang : <%= rating_for @game, "Umfang", { star: 5, cancel: true, readonly: true } %>
-
+<hr/>
+<h4>Kommentare</h4>
 
 
