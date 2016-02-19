@@ -12,6 +12,10 @@ default: &default
 development:
   <<: *default
   database: db/development.sqlite3
+#nico wichtig für rspec Tests
+test:
+  <<: *default
+  database: db/test.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
