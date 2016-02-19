@@ -39,7 +39,8 @@ gem 'autoprefixer-rails'
 gem 'paperclip'
 gem 'devise'
 gem 'ratyrate', '1.2.2.alpha'
-
+gem 'rolify'
+gem 'cancan'
 
 
 group :development, :test do

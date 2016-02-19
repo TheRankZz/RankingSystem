@@ -4,10 +4,10 @@
     <h2>Liste</h2>
   </div>
   <div class="col-md-2">
-    <%= link_to 'Neues Spiel anlegen', new_game_path, :class => "btn btn-default" %>
+    <% if can?(:create, Game) %>
+        <%= link_to 'Neues Spiel anlegen', new_game_path, :class => "btn btn-default" %>
+    <% end %>
   </div>
 </div>
 
 <%= render 'shared/gamestable', :search => false %>
-
-
