@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_one :profile, :dependent => :destroy
   ratyrate_rater
+
+  has_many :comments
 end

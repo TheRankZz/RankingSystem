@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
+  get 'comment/new'
+
+  get 'comment/destroy'
+
+  get 'search/index'
+
+
+  post 'comment/new' => 'comment#create'
 
   resources :profiles
   devise_for :users

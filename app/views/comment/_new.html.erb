@@ -1,0 +1,19 @@
+
+
+<h4>Neuer Kommentar</h4>
+<%= form_for(@comment, url: comment_new_path) do |f| %>
+
+    <%= f.hidden_field :game_id, :value => game_id %>
+    <%= f.hidden_field :user_id, :value => user_id %>
+
+
+    <%= f.label :text %>
+    <%= f.text_field :text, :class => "form-control" %>
+
+    <%= f.submit "Speichern", :class => 'btn btn-primary' %>
+
+<% end %>
+
+
+
+<hr/>
