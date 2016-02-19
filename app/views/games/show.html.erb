@@ -32,7 +32,7 @@
   </div>
   <div class="col-md-8">
     <h2 class="no-margin-top"><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
-    <%= rating_for @game, "GESAMT",  { readonly: true, targetFormat: '{score}' } %>
+    <%= rating_for @game, "GESAMT",  { readonly: true } %>
     <%= render 'myrating' %>
     <br/>
     <br/>

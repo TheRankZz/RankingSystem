@@ -11,8 +11,11 @@ class Game < ActiveRecord::Base
   has_many :platforms, through: :game_platforms
 
 
-  TYPES = ["GESAMT" , "UMFANG", "STORY", "SPIELDESIGN" ]
+  TYPES = ["GESAMT", "UMFANG", "STORY", "SPIELDESIGN"]
   ratyrate_rateable *TYPES
+
+
+  has_many :rating_caches, :foreign_key => "cacheable_id", :class_name => "RatingCache"
 
 
   # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
@@ -33,9 +36,13 @@ class Game < ActiveRecord::Base
   end
 
 
-
-  def self.orderByRating()
-    joins(:rating_caches).where(:cacheable_id => Game)
+  def self.getGamesWithRanking(dimension: 'GESAMT')
+    includes(:rating_caches).where('rating_caches.dimension LIKE ?', dimension)
         .order('rating_caches.avg DESC')
+  end
+
+
+  def self.getAllGamesOrderByRanking()
+    (getGamesWithRanking + all).uniq
   end
 end

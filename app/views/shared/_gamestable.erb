@@ -7,17 +7,21 @@
       <% end %>
       <th>Spiel</th>
       <th>Entwickler</th>
+      <th>Erscheinungsdatum</th>
       <th>Bewertung</th>
     </tr>
     </thead>
     <tbody>
-    <% @games.each do |game| %>
+    <% i = 0 %>
+    <% @games.each do |game | %>
+        <% i = i + 1 %>
         <tr>
           <% if !search %>
-          <td></td>
+          <td># <%= i %></td>
           <% end %>
           <td><%= link_to game.title, game %></td>
           <td><%= game.developer %></td>
+          <td><%= game.releaseDate %></td>
           <td><%= rating_for game, "GESAMT",  { readonly: true} %></td>
         </tr>
     <% end %>
