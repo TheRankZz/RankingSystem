@@ -1,11 +1,4 @@
-<% @page_title = "Game" %>
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to 'Zurück', games_path, :class => "btn btn-default" %> |
-    <%= link_to 'Bearbeiten', edit_game_path(@game), :class => "btn btn-warning" %>
-    <%= link_to 'Löschen', @game, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
-  </div>
-</div>
+<% @page_title = @game.title %>
 <br/>
 <div class="row">
   <div class="col-md-4">
@@ -14,25 +7,30 @@
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-5"><strong>Spieldesign:</strong></div>
       <div class="col-xs-12 col-sm-12 col-md-5">
-        <%= rating_for @game, "SPIELDESIGN", { star: 5, cancel: true, readonly: true } %>
+        <%= rating_for @game, "SPIELDESIGN", {star: 5, cancel: true, readonly: true} %>
       </div>
     </div>
+    <br/>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-5"><strong>Story/Atmosphäre:</strong></div>
       <div class="col-xs-12 col-sm-12 col-md-5">
-        <%= rating_for @game, "STORY", { star: 5, cancel: true, readonly: true } %>
+        <%= rating_for @game, "STORY", {star: 5, cancel: true, readonly: true} %>
       </div>
     </div>
+    <br/>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-5"><strong>Umfang:</strong></div>
       <div class="col-xs-12 col-sm-12 col-md-5">
-        <%= rating_for @game, "UMFANG", { star: 5, cancel: true, readonly: true } %>
+        <%= rating_for @game, "UMFANG", {star: 5, cancel: true, readonly: true} %>
       </div>
     </div>
   </div>
+
   <div class="col-md-8">
-    <h2 class="no-margin-top"><%= @game.title %> <br/><small>von <%= @game.developer %></small></h2>
-    <%= rating_for @game, "GESAMT",  { readonly: true } %>
+    <h2 class="no-margin-top"><%= @game.title %> <br/>
+      <small>von <%= @game.developer %></small>
+    </h2>
+    <%= rating_for @game, "GESAMT", {readonly: true} %>
     <%= render 'myrating' %>
     <br/>
     <br/>
@@ -44,7 +42,7 @@
     <br/>
     <strong>Genre:</strong>
     <% @game.genres.each do |g| %>
-      <%= g.name %> |
+        <%= g.name %> |
     <% end %>
     <br/>
     <strong>Platform:</strong>
@@ -53,22 +51,14 @@
     <% end %>
     <br/>
     <br/>
-    <%= link_to 'Hier kaufen',  @game.link, :class => "btn btn-default", :target => "blank" %>
+    <%= link_to 'Hier kaufen', @game.link, :class => "btn btn-default", :target => "blank" %>
   </div>
 </div>
 <hr/>
-<h4>Kommentare</h4>
-
-
 <br/>
-
+<h4>Kommentare <span class="badge"><%= @game.comments.count %></span></h4>
+<br/>
 <% if user_signed_in? %>
-
-
-<%= render 'comment/new',  game_id: @game.id, user_id: current_user.id  %>
-
-    <% end %>
-
-
-
+    <%= render 'comment/new', game_id: @game.id, user_id: current_user.id %>
+<% end %>
 <%= render partial: 'comment/comment', collection: @game.comments %>

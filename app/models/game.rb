@@ -48,4 +48,9 @@ class Game < ActiveRecord::Base
   def self.getAllGamesOrderByRanking()
     (getGamesWithRanking + all).uniq
   end
+
+
+  def self.getGamesOrderByReleaseDate()
+    order('releaseDate DESC')
+  end
 end

@@ -1,13 +1,20 @@
-
 nav.navbar-custom {
   background-color: #2c3e50;
 
   .navbar-brand {
-    color:#fff;
+    color: #fff;
+    img {
+      height: 50px;
+      margin-top: -15px;
+    }
   }
 
-   .navbar-toggle {
-    border:0;
+  .navbar-toggle {
+    border: 0;
+  }
+
+  .img-circle {
+    height: 18px;
   }
 }
 
@@ -31,13 +38,12 @@ div.rating {
 }
 
 .no-margin-top {
-  margin-top:0;
+  margin-top: 0;
 }
 
 .page-header h2 {
-  margin-top:5px;
+  margin-top: 5px;
 }
-
 
 .form-signin {
   margin: 0 auto;
@@ -49,12 +55,11 @@ form.button_to {
   display: inline-block;
 }
 
-
 div.star {
   display: inline-block;
 }
 
 .field_with_errors {
   background-color: #d9534f;
-  color:#fff;
+  color: #fff;
 }

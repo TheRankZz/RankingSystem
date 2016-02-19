@@ -1,14 +1,11 @@
 <% @page_title = "User" %>
 <div class="container form-signin">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <h2 class="form-signin-heading">Konto bearbeiten</h2>
+      <h2 class="form-signin-heading">Kontoeinstellungen</h2>
       <hr/>
       <%= devise_error_messages! %>
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, :class => "form-control" %>
-      <br/>
-      <%= f.label :name %><br />
-      <%= f.text_field :name, :class => "form-control" %>
       <br/>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div class="alert alert-warning">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

@@ -1,3 +1,5 @@
+<% @page_title = "Suche" %>
+
 <%= form_tag(search_path, :method => "get", id: "search-form") do %>
     <div class="row page-header">
       <div class="col-md-8 col-md-offset-2">
@@ -14,5 +16,5 @@
 <% end %>
 
 <% if !@games.nil? %>
-  <%= render 'shared/gamestable', :search => true %>
+    <%= render 'shared/gamestable', :search => true %>
 <% end %>

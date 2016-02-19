@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20160218125233) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-ActiveRecord::Schema.define(version: 20160218100103) do
-
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"

@@ -33,11 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'tzinfo-data'
-gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
-gem 'paperclip'
-gem 'devise'
+gem 'tzinfo-data', '1.2016.1'
+gem 'bootstrap-sass', '3.3.6'
+gem 'autoprefixer-rails', '6.3.2'
+gem 'paperclip', '4.3.5'
+gem 'devise', '3.5.6'
 gem 'ratyrate', '1.2.2.alpha'
 
 

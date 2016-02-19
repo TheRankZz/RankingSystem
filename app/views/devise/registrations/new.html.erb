@@ -7,9 +7,6 @@
   <%= f.label :email %>
   <%= f.email_field :email, autofocus: true, :class => "form-control" %>
   <br/>
-  <%= f.label :name %><br />
-  <%= f.text_field :name, :class => "form-control" %>
-  <br/>
   <%= f.label :password %>
   <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>

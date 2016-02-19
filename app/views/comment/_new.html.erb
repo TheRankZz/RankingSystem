@@ -1,19 +1,28 @@
-
-
-<h4>Neuer Kommentar</h4>
 <%= form_for(@comment, url: comment_new_path) do |f| %>
 
     <%= f.hidden_field :game_id, :value => game_id %>
     <%= f.hidden_field :user_id, :value => user_id %>
 
 
-    <%= f.label :text %>
-    <%= f.text_field :text, :class => "form-control" %>
+    <div class="row">
+      <div class="col-sm-1 hidden-xs">
+        <div class="thumbnail">
+          <%= image_tag current_user.profile.image.url(:thumb), :class => "img-responsive user-photo" %>
+        </div><!-- /thumbnail -->
+      </div><!-- /col-sm-1 -->
 
-    <%= f.submit "Speichern", :class => 'btn btn-primary' %>
+      <div class="col-sm-11 col-md-11">
 
+        <div class="comment input-group form-group-lg">
+          <%= f.text_area :text, :class => "form-control", placeholder: "Schreibe einen Kommentar..." %>
+          <span class="input-group-btn">
+            <%= button_tag(type: 'submit', class: "btn btn-default btn-lg") do %>
+              <span class="glyphicon glyphicon-comment"></span>
+            <% end %>
+          </span>
+        </div><!-- /input-group -->
+
+      </div><!--/col-sm-5 -->
+    </div><!--/row -->
 <% end %>
-
-
-
 <hr/>

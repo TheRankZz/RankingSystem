@@ -1,6 +1,7 @@
 class Profile < ActiveRecord::Base
   has_attached_file :image, styles: {
-      thumb: '48x48#',
+      icon: '64x64#',
+      thumb: '128x128#',
       medium: '200x200#'
   }
 

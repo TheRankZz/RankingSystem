@@ -6,9 +6,10 @@
       <th>Rang</th>
       <% end %>
       <th>Spiel</th>
-      <th>Entwickler</th>
-      <th>Erscheinungsdatum</th>
+      <th class="hidden-xs">Entwickler</th>
+      <th class="hidden-xs">Erscheinungsdatum</th>
       <th>Bewertung</th>
+      <th class="hidden-xs"></th>
     </tr>
     </thead>
     <tbody>
@@ -19,10 +20,14 @@
           <% if !search %>
           <td># <%= i %></td>
           <% end %>
-          <td><%= link_to game.title, game %></td>
-          <td><%= game.developer %></td>
-          <td><%= game.releaseDate %></td>
+          <td ><%= link_to game.title, game %></td>
+          <td class="hidden-xs"><%= game.developer %></td>
+          <td class="hidden-xs"><%= game.releaseDate %></td>
           <td><%= rating_for game, "GESAMT",  { readonly: true} %></td>
+          <td class="text-right hidden-xs">
+            <%= link_to 'Bearbeiten', edit_game_path(game) %> |
+            <%= link_to 'Löschen', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
         </tr>
     <% end %>
     </tbody>
