@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
 
   post 'comment/new' => 'comment#create'
+  delete 'comment/destroy' => 'comment#destroy'
+
 
   resources :profiles
   devise_for :users

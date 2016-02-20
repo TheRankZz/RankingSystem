@@ -34,6 +34,10 @@
 
 
 .comment.input-group.form-group-lg {
+  .form-control {
+    height: 70px;
+    max-height: 70px;
+  }
   .btn.btn-default.btn-lg {
     height: 70px;
   }

@@ -13,7 +13,7 @@ nav.navbar-custom {
     border: 0;
   }
 
-  .img-circle {
+  .img-rounded {
     height: 18px;
   }
 }
@@ -22,19 +22,6 @@ nav.navbar-custom {
   display: table;
   margin-left: auto !important;
   margin-right: auto !important;
-}
-
-div.rating {
-  margin-bottom: 10px;
-
-  .glyphicon-star.yellow {
-    color: #f1c40f;
-  }
-
-  .glyphicon-star.grew {
-    color: #bdc3c7;
-  }
-
 }
 
 .no-margin-top {
@@ -62,4 +49,25 @@ div.star {
 .field_with_errors {
   background-color: #d9534f;
   color: #fff;
+}
+
+.badge.yellow {
+  background-color: #f1c40f;
+  color: #2E2F30;
+}
+
+.badge.red {
+  background-color: #d9534f;
+}
+
+.img-center.img-rounded.profile {
+  border: 1px solid #999999;
+}
+
+.img-border {
+  border: 1px solid #999999;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav.pull-right { float: none!important; }
 }

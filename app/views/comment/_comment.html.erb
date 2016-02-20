@@ -9,9 +9,10 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <strong><%= comment.user.profile.username %>&nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at %></span>
+        <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'pull-right' %>
       </div>
       <div class="panel-body">
-        <%= comment.text %>
+        <%= simple_format(comment.text, {}, wrapper_tag: "div") %>
       </div><!-- /panel-body -->
     </div><!-- /panel panel-default -->
   </div><!-- /col-sm-5 -->

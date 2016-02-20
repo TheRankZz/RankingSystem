@@ -21,9 +21,14 @@ class CommentController < ApplicationController
 
 
   def destroy
-    @comment.destroy
+    if params[:id]
+      @comment = Comment.find(params[:id])
+      @game_id = @comment.game_id
+      @comment.destroy
+    end
+
     respond_to do |format|
-      format.html { redirect_to comment_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

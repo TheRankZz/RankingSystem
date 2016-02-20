@@ -5,12 +5,14 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
+    @navbar = 'Liste'
     @games = Game.getAllGamesOrderByRanking
   end
 
   # GET /games/1
   # GET /games/1.json
   def show
+    @navbar = 'Liste'
     @comment = Comment.new
   end
 

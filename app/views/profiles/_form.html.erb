@@ -12,9 +12,9 @@
         </div>
     <% end %>
 
-    <div class="">
+    <div>
       <% if !@profile.nil? && !@profile.new_record? %>
-          <%= image_tag @profile.image.url(:medium), :class => "img-center img-rounded" %>
+          <%= image_tag @profile.image.url(:medium), :class => "img-center img-rounded profile" %>
       <% end %>
       <br/>
       <br/>

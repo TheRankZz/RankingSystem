@@ -11,8 +11,7 @@
     </div>
   <% end %>
 
-<div class="row">
-  <div class="col-md-12">
+<div class="page-header">
     <% if !@game.nil? && !@game.new_record? %>
         <%= link_to 'Abbrechen', game_path, :class => "btn btn-danger" %>
     <% else %>
@@ -20,9 +19,7 @@
     <% end %>
 
     <%= f.submit "Speichern", :class => 'btn btn-primary' %>
-  </div>
 </div>
-<br/>
 <div class="row">
   <div class="col-md-3">
     <% if !@game.nil? && !@game.new_record? %>
