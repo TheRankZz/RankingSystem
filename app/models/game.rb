@@ -51,6 +51,6 @@ class Game < ActiveRecord::Base
 
 
   def self.getGamesOrderByReleaseDate()
-    order('releaseDate DESC')
+    order('releasedate DESC')
   end
 end

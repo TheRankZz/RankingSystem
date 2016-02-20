@@ -23,7 +23,7 @@
           <% end %>
           <td ><%= link_to game.title, game %></td>
           <td class="hidden-xs"><%= game.developer %></td>
-          <td class="hidden-xs"><%= game.releaseDate %></td>
+          <td class="hidden-xs"><%= game.releasedate %></td>
           <td><%= rating_for game, "GESAMT",  { readonly: true} %></td>
           <td class="text-right hidden-xs">
             <%= link_to 'Bearbeiten', edit_game_path(game) %> |

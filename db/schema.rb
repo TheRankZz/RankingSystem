@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160218125233) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20160218125233) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "comments", ["game_id"], name: "index_comments_on_game_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["game_id"], name: "index_comments_on_game_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "game_genres", force: :cascade do |t|
     t.integer  "game_id"
@@ -41,18 +44,12 @@ ActiveRecord::Schema.define(version: 20160218125233) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "game_genres", ["game_id"], name: "index_game_genres_on_game_id"
-  add_index "game_genres", ["genre_id"], name: "index_game_genres_on_genre_id"
-
   create_table "game_platforms", force: :cascade do |t|
     t.integer  "game_id"
     t.integer  "platform_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  add_index "game_platforms", ["game_id"], name: "index_game_platforms_on_game_id"
-  add_index "game_platforms", ["platform_id"], name: "index_game_platforms_on_platform_id"
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -65,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160218125233) do
     t.string   "link"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.date     "releaseDate"
+    t.date     "releasedate"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -112,8 +109,8 @@ ActiveRecord::Schema.define(version: 20160218125233) do
     t.datetime "updated_at"
   end
 
-  add_index "rates", ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type"
-  add_index "rates", ["rater_id"], name: "index_rates_on_rater_id"
+  add_index "rates", ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type", using: :btree
+  add_index "rates", ["rater_id"], name: "index_rates_on_rater_id", using: :btree
 
   create_table "rating_caches", force: :cascade do |t|
     t.integer  "cacheable_id"
@@ -125,7 +122,7 @@ ActiveRecord::Schema.define(version: 20160218125233) do
     t.datetime "updated_at"
   end
 
-  add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
+  add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -150,9 +147,15 @@ ActiveRecord::Schema.define(version: 20160218125233) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "games"
+  add_foreign_key "comments", "users"
+  add_foreign_key "game_genres", "games"
+  add_foreign_key "game_genres", "genres"
+  add_foreign_key "game_platforms", "games"
+  add_foreign_key "game_platforms", "platforms"
 end
