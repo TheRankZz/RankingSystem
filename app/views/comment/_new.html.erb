@@ -7,7 +7,11 @@
     <div class="row">
       <div class="col-sm-1 hidden-xs">
         <div class="thumbnail">
-          <%= image_tag current_user.profile.image.url(:thumb), :class => "img-responsive user-photo" %>
+          <% if !current_user.profile.nil? %>
+            <%= image_tag current_user.profile.image.url(:thumb), :class => "img-responsive user-photo" %>
+          <% else %>
+              <img class="img-responsive user-photo" src="/images/profile/unknown.png" alt="Unknown" />
+          <% end %>
         </div><!-- /thumbnail -->
       </div><!-- /col-sm-1 -->
 

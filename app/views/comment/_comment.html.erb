@@ -1,15 +1,33 @@
 <div class="row">
   <div class="col-sm-1 hidden-xs">
     <div class="thumbnail">
-      <%= image_tag comment.user.profile.image.url(:thumb), :class => "img-responsive user-photo" %>
+      <% if !comment.user.nil? %>
+          <% if !comment.user.profile.nil? %>
+              <%= image_tag comment.user.profile.image.url(:thumb), :class => "img-responsive user-photo" %>
+          <% else %>
+              <img class="img-responsive user-photo" src="/images/profile/unknown.png" alt="Unknown"/>
+          <% end %>
+      <% else %>
+          <img class="img-responsive user-photo" src="/images/profile/unknown.png" alt="Unknown"/>
+      <% end %>
     </div><!-- /thumbnail -->
   </div><!-- /col-sm-1 -->
 
   <div class="col-sm-11 col-md-11">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <strong><%= comment.user.profile.username %>&nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at %></span>
-        <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'pull-right' %>
+        <strong>
+          <% if !comment.user.nil? %>
+              <% if !comment.user.profile.nil? %>
+                  <%= comment.user.profile.username %>
+              <% else %>
+                  <%= comment.user.email %>
+              <% end %>
+          <% else %>
+              <%= 'Benutzer gelöscht' %>
+          <% end %>
+          &nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at %></span>
+        <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
       </div>
       <div class="panel-body">
         <%= simple_format(comment.text, {}, wrapper_tag: "div") %>

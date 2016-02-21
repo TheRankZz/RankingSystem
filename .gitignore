@@ -38,3 +38,5 @@ bower.json
 .byebug_history
 Gemfile.lock
 workspace.xml
+database.yml
+public/images/upload
