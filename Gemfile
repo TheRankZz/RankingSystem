@@ -46,10 +46,15 @@ gem 'devise', '3.5.6'
 gem 'ratyrate', '1.2.2.alpha'
 
 
-
+# nico rspec Tests
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'faker'
+  gem 'capybara'
 end
 
 group :development do
