@@ -44,7 +44,8 @@ gem 'autoprefixer-rails', '6.3.2'
 gem 'paperclip', '4.3.5'
 gem 'devise', '3.5.6'
 gem 'ratyrate', '1.2.2.alpha'
-
+gem 'rolify'
+gem 'cancan'
 
 # nico rspec Tests
 group :development, :test do

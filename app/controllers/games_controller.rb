@@ -1,6 +1,10 @@
 class GamesController < ApplicationController
+  load_and_authorize_resource except: [:create, :update, :destroy]
+
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+
+
 
   # GET /games
   # GET /games.json
