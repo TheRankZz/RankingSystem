@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
   ratyrate_rater
 
   has_many :comments, :dependent => :nullify
+
+
+  def is?(role)
+    roles.include?(role.to_s)
+  end
 end

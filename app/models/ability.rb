@@ -37,10 +37,12 @@ class Ability
       else
         # Registered users
         can :read, :all
+        cannot [:index, :games, :comments], AdminController
       end
     else
       # Guest users
       can :read, :all
+      cannot [:index, :games, :comments], AdminController
     end
   end
 end

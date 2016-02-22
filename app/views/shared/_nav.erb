@@ -28,6 +28,9 @@
       <ul class="nav navbar-nav pull-right ">
         <% if user_signed_in? %>
             <% if !current_user.profile.nil? && !current_user.profile.new_record? %>
+                <% if current_user.has_role? :admin %>
+                  <li><%= link_to 'VERWALTUNG', admin_index_path %></li>
+                <% end %>
                 <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <%= image_tag current_user.profile.image.url(:icon), :class => "img-rounded" %>
