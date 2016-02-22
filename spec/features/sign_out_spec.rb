@@ -15,7 +15,7 @@ RSpec.feature 'Sign out' do
       fill_in 'Username', with: 'Nico3210'
       fill_in 'Firstname', with: 'Nico'
       fill_in 'Lastname', with: 'Burchert'
-      click_button 'Create Profile'
+      click_button 'Update'
       expect(page).to have_content "Profile was successfully created."
 
       page.find(:xpath, "//a[@href='/users/sign_out']").click
