@@ -71,3 +71,26 @@ div.star {
 @media (max-width: 767px) {
   .navbar-nav.pull-right { float: none!important; }
 }
+
+
+.navbar-inverse .navbar-nav > .active > a {
+  background-color: #1abc9c !important;
+  color: #fff !important;
+}
+
+.dropdown.open > a {
+  background-color: #1abc9c !important;
+  color: #fff !important;
+}
+
+
+.btn.btn-primary {
+  border: 1px solid #16a085;
+  background-color: #1abc9c;
+  color: #fff;
+
+  &:hover {
+    background-color: #16a085;
+    border: 1px solid #16a085;
+  }
+}

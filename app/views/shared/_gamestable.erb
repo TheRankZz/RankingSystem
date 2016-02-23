@@ -1,34 +1,37 @@
 <% if !@games.empty? %>
-<div class="table-responsive">
-  <table class="table table-hover table-striped">
-    <thead>
-    <tr>
-      <% if !search %>
-      <th>Rang</th>
-      <% end %>
-      <th>Spiel</th>
-      <th class="hidden-xs">Entwickler</th>
-      <th class="hidden-xs">Erscheinungsdatum</th>
-      <th>Bewertung</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% i = 0 %>
-    <% @games.each do |game | %>
-        <% i = i + 1 %>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
         <tr>
           <% if !search %>
-          <td><%= i %> <%= i <= 3 ? '<span class="badge red">TOP</span>'.html_safe : '' %></td>
+              <th>Rang</th>
           <% end %>
-          <td ><%= link_to game.title, game %></td>
-          <td class="hidden-xs"><%= game.developer %></td>
-          <td class="hidden-xs"><%= game.releasedate %></td>
-          <td><%= rating_for game, "GESAMT",  { readonly: true} %></td>
+          <th>Spiel</th>
+          <th class="hidden-xs">Entwickler</th>
+          <th class="hidden-xs">Erscheinungsdatum</th>
+          <th colspan="2">Bewertung</th>
         </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
+        </thead>
+        <tbody>
+        <% i = 0 %>
+        <% @games.each do |game| %>
+            <% i = i + 1 %>
+            <tr>
+              <% if !search %>
+                  <td><%= i %></td>
+              <% end %>
+              <td><%= link_to game.title, game %></td>
+              <td class="hidden-xs"><%= game.developer %></td>
+              <td class="hidden-xs"><%= game.releasedate %></td>
+              <td><%= rating_for game, "GESAMT", {readonly: true} %></td>
+              <% if !search %>
+                  <td style="width: 50px;"><%= i <= 3 ? '<span class="badge red">TOP</span>'.html_safe : '' %></td>
+              <% end %>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
 <% elsif search %>
     <h4>Es wurde leider kein Spiel gefunden!</h4>
 <% end %>
