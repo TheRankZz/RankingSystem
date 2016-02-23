@@ -4,9 +4,16 @@
 
 RankingSystem ist eine Webseite zum Informieren und Bewerten von Spielen.
 
+***Heroku***
+
+Unsere Seite ist unter Heroku zu finden mit der URL
+
+https://therankzz.herokuapp.com
+
 ***Informationen***
 *   Besucher können sich Registrieren und Kommentare / Informationen zu
     Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
+
 *   Auf der Home Seite können Besucher die neusten hinzugefügten Spiele sehen
     und die Spiele die am besten bewertet sind
 *   Besucher können entweder alle Spiele sehen, oder auch nach einzelnen
@@ -15,10 +22,13 @@ RankingSystem ist eine Webseite zum Informieren und Bewerten von Spielen.
 *   Man kann Spiele nicht nur nach Namen filtern, sondern auch nach Genre,
     Hersteller und Beschreibung
 
+*   Eigenen Admin Bereich
+
 *   Besucher haben die Möglichkeit ein eigenes Profil zu erstellen
     (Profilbild, Username, Vorname, Nachname)
 
 *   Spiele können nach folgenden Kriterien bewertet werden:
+
         - Spieldesign
         - Story/Atmosphäre
         - Umfang
@@ -128,10 +138,6 @@ Um die Tests zu starten folgenden Befehl verwenden:
 
 Alle Tests sind also im spec Ordner.
 
-***Heroku***
 
-Unsere Seite ist unter Heroku zu finden mit der URL
-
-https://therankzz.herokuapp.com
 
 
