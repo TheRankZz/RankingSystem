@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   post 'comment/new' => 'comment#create'
   delete 'comment/destroy' => 'comment#destroy'
+  put 'comment/notify' => 'comment#notify'
 
 
   resources :profiles
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'search/' => 'search#result'
   get 'home/' => 'home#index'
+
+
   #get 'profiles/edit' => 'profiles#edit'
 
 

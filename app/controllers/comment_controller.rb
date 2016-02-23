@@ -4,6 +4,17 @@ class CommentController < ApplicationController
     @comment = Comment.new
   end
 
+  def notify
+    @comment = Comment.find(params[:id])
+    @comment.notify = true
+     respond_to do |format|
+       if @comment.save
+         format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde gemeldet'}
+       else
+         format.html { render :new }
+       end
+     end
+  end
 
   # POST /comment
   # POST /comment.json
