@@ -1,5 +1,3 @@
-## README
-
 # RankingSystem
 
 RankingSystem ist eine Webseite zum Informieren und Bewerten von Spielen.
