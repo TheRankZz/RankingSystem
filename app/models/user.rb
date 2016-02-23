@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,4 +9,9 @@ class User < ActiveRecord::Base
   ratyrate_rater
 
   has_many :comments, :dependent => :nullify
+
+
+  def is?(role)
+    roles.include?(role.to_s)
+  end
 end

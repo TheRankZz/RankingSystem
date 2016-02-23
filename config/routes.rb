@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
+  get 'admin/games'
+
+  get 'admin/comments'
+
+  get 'admin/users'
+
   post '/rate' => 'rater#create', :as => 'rate'
   get 'comment/new'
 

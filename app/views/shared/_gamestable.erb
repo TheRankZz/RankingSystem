@@ -10,7 +10,6 @@
       <th class="hidden-xs">Entwickler</th>
       <th class="hidden-xs">Erscheinungsdatum</th>
       <th>Bewertung</th>
-      <th class="hidden-xs"></th>
     </tr>
     </thead>
     <tbody>
@@ -25,17 +24,11 @@
           <td class="hidden-xs"><%= game.developer %></td>
           <td class="hidden-xs"><%= game.releasedate %></td>
           <td><%= rating_for game, "GESAMT",  { readonly: true} %></td>
-          <td class="text-right hidden-xs">
-            <%= link_to 'Bearbeiten', edit_game_path(game) %> |
-            <%= link_to 'Löschen', game, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
         </tr>
     <% end %>
     </tbody>
   </table>
 </div>
 <% elsif search %>
-
     <h4>Es wurde leider kein Spiel gefunden!</h4>
-
 <% end %>
