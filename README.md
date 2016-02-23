@@ -28,6 +28,7 @@ RankingSystem ist eine Webseite zum Informieren und Bewerten von Spielen.
 *   RankingSystem 1.0 arbeitet mit der Rails 4.2.5.1 und mit der Ruby Version
     2.3.0.
 *   Damit RankingSystem fehlerfrei läuft müssen Sie folgendes beachten:
+       
         - Imagemagick 6.7.7 installieren
         - Postgresql 9.3 installieren
 
