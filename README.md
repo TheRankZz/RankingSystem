@@ -28,7 +28,7 @@ RankingSystem ist eine Webseite zum Informieren und Bewerten von Spielen.
 *   RankingSystem 1.0 arbeitet mit der Rails 4.2.5.1 und mit der Ruby Version
     2.3.0.
 *   Damit RankingSystem fehlerfrei läuft müssen Sie folgendes beachten:
-
+`
         - Imagemagick 6.7.7 installieren
         - Postgresql 9.3 installieren
 
@@ -46,7 +46,7 @@ Einrichten von Postgresql 9.3 auf Linux:
     - sudo gedit /etc/postgresql/9.3/main/pg_hba.conf
 
 ```
-
+``
     - in der pg_hba.conf Datei die folgenden Zeilen suchen:
         local   all             all                                     peer
         host    all             all             127.0.0.1/32            md5
@@ -125,6 +125,7 @@ Um die Tests zu starten folgenden Befehl verwenden:
 
 ```
     - bundle exec rspec spec/'pfad zum Test'
+```
 
 Alle Tests sind also im spec Ordner.
 

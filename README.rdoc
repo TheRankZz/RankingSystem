@@ -1,29 +1,37 @@
-== README
+## README
 
 # RankingSystem
 
 RankingSystem ist eine Webseite zum Informieren und Bewerten von Spielen.
 
-**Informationen**
-- Besucher können sich Registrieren und Kommentare / Informationen zu Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
-- Auf der Home Seite können Besucher die neusten hinzugefügten Spiele sehen und die Spiele die am besten bewertet sind
-- Besucher können entweder alle Spiele sehen, oder auch nach einzelnen Spielen suchen
+***Informationen***
+*   Besucher können sich Registrieren und Kommentare / Informationen zu
+    Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
+*   Auf der Home Seite können Besucher die neusten hinzugefügten Spiele sehen
+    und die Spiele die am besten bewertet sind
+*   Besucher können entweder alle Spiele sehen, oder auch nach einzelnen
+    Spielen suchen
 
-- Man kann Spiele nicht nur nach Namen filtern, sondern auch nach Genre, Hersteller und Beschreibung
+*   Man kann Spiele nicht nur nach Namen filtern, sondern auch nach Genre,
+    Hersteller und Beschreibung
 
-- Besucher haben die Möglichkeit ein eigenes Profil zu erstellen (Profilbild, Username, Vorname, Nachname)
+*   Besucher haben die Möglichkeit ein eigenes Profil zu erstellen
+    (Profilbild, Username, Vorname, Nachname)
 
-- Spiele können nach folgenden Kriterien bewertet werden:
-    - Spieldesign
-    - Story/Atmosphäre
-    - Umfang
+*   Spiele können nach folgenden Kriterien bewertet werden:
+        - Spieldesign
+        - Story/Atmosphäre
+        - Umfang
 
-**Start**
-- RankingSystem 1.0 arbeitet mit der Rails 4.2.5.1 und mit der Ruby Version 2.3.0.
-- Damit RankingSystem fehlerfrei läuft müssen Sie folgendes beachten:
 
-    - Imagemagick 6.7.7 installieren
-    - Postgresql 9.3 installieren
+***Start***
+*   RankingSystem 1.0 arbeitet mit der Rails 4.2.5.1 und mit der Ruby Version
+    2.3.0.
+*   Damit RankingSystem fehlerfrei läuft müssen Sie folgendes beachten:
+`
+        - Imagemagick 6.7.7 installieren
+        - Postgresql 9.3 installieren
+
 
 Einrichten von Postgresql 9.3 auf Linux:
 
@@ -36,8 +44,9 @@ Einrichten von Postgresql 9.3 auf Linux:
     - nun als Passwort 'passwort' eingeben
     - \q
     - sudo gedit /etc/postgresql/9.3/main/pg_hba.conf
-```
 
+```
+``
     - in der pg_hba.conf Datei die folgenden Zeilen suchen:
         local   all             all                                     peer
         host    all             all             127.0.0.1/32            md5
@@ -47,17 +56,20 @@ Einrichten von Postgresql 9.3 auf Linux:
         host    all             all             127.0.0.1/32            trust
         host    all             all             ::1/128                 trust
 
-Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und folgendes in die console eingeben:
+Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und
+folgendes in die console eingeben:
 
 ```
     - bundle install
     - rake db:create
     - rake db:migrate
     - rake db:seed
+
 ```
 
 **Übersicht über die wichtigsten Gems und Funktionen**
-* Allgemeine
+*   Allgemeine
+
 ```
     - gem 'rails', '4.2.5'
     - gem 'pg'
@@ -69,9 +81,11 @@ Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und fol
     - gem 'turbolinks'
     - gem 'jbuilder', '~> 2.0'
     - gem 'sdoc', '~> 0.4.0'
+
 ```
 
-* Für RSpec Tests
+*   Für RSpec Tests
+
 ```
     - gem 'byebug'
     - gem 'rspec-rails'
@@ -79,40 +93,46 @@ Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und fol
     - gem 'guard-rspec'
     - gem 'faker'
     - gem 'capybara'
+
 ```
 
-* um Bilder hochzuladen
+*   um Bilder hochzuladen
+
 ```
     - gem 'paperclip', '4.3.5'
+
 ```
 
-* um zu Bewerten
+*   um zu Bewerten
+
 ```
     - gem 'ratyrate', '1.2.2.alpha'
+
 ```
 
-* für User, Rechte, Profile
+*   für User, Rechte, Profile
+
 ```
     - gem 'devise'
     - gem 'cancan'
     - gem 'rolify'
+
 ```
 
-**Tests**
+***Tests***
 
 Um die Tests zu starten folgenden Befehl verwenden:
 
 ```
     - bundle exec rspec spec/'pfad zum Test'
+```
 
 Alle Tests sind also im spec Ordner.
 
-**Heroku**
+***Heroku***
 
 Unsere Seite ist unter Heroku zu finden mit der URL
 
 https://therankzz.herokuapp.com
-
-
 
 
