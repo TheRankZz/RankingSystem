@@ -12,16 +12,13 @@
   <% end %>
 
 <div class="page-header">
-    <% if !@game.nil? && !@game.new_record? %>
-        <%= link_to 'Abbrechen', game_path, :class => "btn btn-danger" %>
-    <% else %>
-        <%= link_to 'Abbrechen', games_path, :class => "btn btn-danger" %>
-    <% end %>
 
-    <%= f.submit "Speichern", :class => 'btn btn-primary' %>
+  <%= link_to 'Abbrechen', admin_games_path, :class => "btn btn-danger" %>
+
+  <%= f.submit "Speichern", :class => 'btn btn-primary' %>
 </div>
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-4">
     <% if !@game.nil? && !@game.new_record? %>
       <%= image_tag @game.image.url(:medium), :class => "img-rounded" %>
     <% end %>
@@ -29,7 +26,7 @@
     <br/>
     <%= f. file_field :image %>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-8">
 
     <div class="form-group">
       <%= f.label :title %>

@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   put 'comment/notify' => 'comment#notify'
 
 
+
+  match 'user/destroy/:id' => 'user#destroy', :via => :delete, :as => :admin_destroy_user
+
+
   resources :profiles
   devise_for :users
   resources :games

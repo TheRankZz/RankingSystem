@@ -4,10 +4,10 @@ class Game < ActiveRecord::Base
       medium: '250x300#'
   }
 
-  has_many :game_genres
+  has_many :game_genres, :dependent  => :delete_all
   has_many :genres, through: :game_genres
 
-  has_many :game_platforms
+  has_many :game_platforms, :dependent  => :delete_all
   has_many :platforms, through: :game_platforms
 
 
