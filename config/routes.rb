@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   delete 'comment/destroy' => 'comment#destroy'
 
 
+
+  match 'user/destroy/:id' => 'user#destroy', :via => :delete, :as => :admin_destroy_user
+
+
   resources :profiles
   devise_for :users
   resources :games

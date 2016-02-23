@@ -6,12 +6,12 @@ class AdminController < ApplicationController
 
   def games
     @games = Game.all
-
   end
 
   def comments
   end
 
   def users
+    @users = User.all
   end
 end
