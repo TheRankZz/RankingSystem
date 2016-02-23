@@ -9,6 +9,7 @@ class AdminController < ApplicationController
   end
 
   def comments
+    @comments = Comment.where(:notify => true)
   end
 
   def users
