@@ -47,8 +47,13 @@ class CommentController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
+      if params[:redirect] == 'admin'
+        format.html { redirect_to admin_comments_path, notice: 'Comment was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

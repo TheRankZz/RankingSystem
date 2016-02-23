@@ -27,14 +27,17 @@
               <%= 'Benutzer gelöscht' %>
           <% end %>
           &nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at %></span>
-        <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
-        <%= link_to 'Melden', comment_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+        <% if (current_user.id == comment.user_id) || (current_user.has_role? :admin) %>
+            <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+        <% else %>
+            <%= link_to 'Melden', comment_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+        <% end %>
       </div>
       <div class="panel-body">
         <%= simple_format(comment.text, {}, wrapper_tag: "div") %>
 
         <% if comment.notify? %>
-        <%= 'Kommentar wurde gemeldet' %>
+            <%= 'Kommentar wurde gemeldet' %>
         <% end %>
       </div><!-- /panel-body -->
     </div><!-- /panel panel-default -->
