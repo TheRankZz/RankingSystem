@@ -45,6 +45,7 @@ Einrichten von Postgresql 9.3 auf Linux:
     - sudo gedit /etc/postgresql/9.3/main/pg_hba.conf
 
 ```
+
     - in der pg_hba.conf Datei die folgenden Zeilen suchen:
         local   all             all                                     peer
         host    all             all             127.0.0.1/32            md5
@@ -55,7 +56,9 @@ Einrichten von Postgresql 9.3 auf Linux:
         host    all             all             ::1/128                 trust
 
 Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und
-folgendes in die console eingeben: ```
+folgendes in die console eingeben:
+
+```
     - bundle install
     - rake db:create
     - rake db:migrate
