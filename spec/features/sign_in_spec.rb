@@ -6,15 +6,15 @@ RSpec.feature 'Sign in',
   context 'at start page' do
     let(:user) { FactoryGirl.create(:user)}
 
-    scenario 'sing in' do
+    scenario 'sign in' do
       visit 'home/index'
-      click_link 'LOGIN'
+      click_link 'ANMELDEN'
       fill_in 'user_email', with: user.email
       fill_in 'user_password', with: 'passwort'
 
-      click_button 'Sign in'
+      click_button 'Anmelden'
 
-      expect(page).to have_content "Signed in successfully."
+      expect(page).to have_content "Erfolgreich angemeldet."
     end
   end
 end

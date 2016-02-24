@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :lockable
 
   has_one :profile, :dependent => :destroy
-  ratyrate_rater
 
   has_many :comments, :dependent => :nullify
+
+  ratyrate_rater
 
 
   def is?(role)

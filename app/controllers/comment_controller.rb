@@ -1,13 +1,14 @@
 class CommentController < ApplicationController
-  before_action :authenticate_user!, only: [:destroy, :new]
+  before_action :authenticate_user!, only: [:destroy, :new, :notify]
 
   #GET /comment/new
   def _new
     @comment = Comment.new
   end
 
-  # PUT /comment/notify
-  # PUT /comment/notify.json
+
+  # PUT /comment/notify/1
+  # PUT /comment/notify/1.json
   def notify
     if params[:id]
       @comment = Comment.find(params[:id])
@@ -22,14 +23,33 @@ class CommentController < ApplicationController
     end
   end
 
-  # POST /comment
-  # POST /comment.json
+
+  # PUT /comment/reset_notify/1
+  # PUT /comment/reset_notify/1.json
+  def reset_notify
+    if params[:id]
+      @comment = Comment.find(params[:id])
+      @comment.notify = false
+    end
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to admin_comments_path, notice: 'Kommentar wurde zurückgesetzt!' }
+      else
+        format.html { redirect_to admin_comments_path, notice: 'Kommentar konnte nicht zurückgesetzt werden!' }
+      end
+    end
+  end
+
+
+  # POST /comment/new
+  # POST /comment/new.json
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully created.' }
+        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde erfolgreich abgegeben.' }
       else
         format.html { render :new }
       end
@@ -54,6 +74,8 @@ class CommentController < ApplicationController
         format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully destroyed.' }
         format.json { head :no_content }
       end
+      format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde erfolgreich gelöscht.' }
+      format.json { head :no_content }
     end
   end
 

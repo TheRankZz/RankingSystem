@@ -11,7 +11,7 @@ https://therankzz.herokuapp.com
 ***Informationen***
 *   Besucher können sich Registrieren und Kommentare / Informationen zu
     Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
-
+    
 *   Auf der Home Seite können Besucher die neusten hinzugefügten Spiele sehen
     und die Spiele die am besten bewertet sind
 *   Besucher können entweder alle Spiele sehen, oder auch nach einzelnen
@@ -19,7 +19,7 @@ https://therankzz.herokuapp.com
 
 *   Man kann Spiele nicht nur nach Namen filtern, sondern auch nach Genre,
     Hersteller und Beschreibung
-
+    
 *   Eigenen Admin Bereich
 
 *   Besucher haben die Möglichkeit ein eigenes Profil zu erstellen
@@ -36,7 +36,7 @@ https://therankzz.herokuapp.com
 *   RankingSystem 1.0 arbeitet mit der Rails 4.2.5.1 und mit der Ruby Version
     2.3.0.
 *   Damit RankingSystem fehlerfrei läuft müssen Sie folgendes beachten:
-
+       
         - Imagemagick 6.7.7 installieren
         - Postgresql 9.3 installieren
 

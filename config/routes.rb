@@ -1,28 +1,4 @@
 Rails.application.routes.draw do
-  get 'admin/index'
-
-  get 'admin/games'
-
-  get 'admin/comments'
-
-  get 'admin/users'
-
-  post '/rate' => 'rater#create', :as => 'rate'
-  get 'comment/new'
-
-  get 'comment/destroy'
-
-  get 'search/index'
-
-
-  post 'comment/new' => 'comment#create'
-  delete 'comment/destroy' => 'comment#destroy'
-  put 'comment/notify' => 'comment#notify'
-
-
-
-  match 'user/destroy/:id' => 'user#destroy', :via => :delete, :as => :admin_destroy_user
-
 
   resources :profiles
   devise_for :users
@@ -38,6 +14,23 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'search/' => 'search#result'
   get 'home/' => 'home#index'
+
+  get 'admin/index'
+  get 'admin/games'
+  get 'admin/comments'
+  get 'admin/users'
+
+  post '/rate' => 'rater#create', :as => 'rate'
+
+  get 'search/index'
+
+  post 'comment/new' => 'comment#create'
+  delete 'comment/destroy' => 'comment#destroy'
+  put 'comment/notify' => 'comment#notify'
+  put 'comment/reset_notify'
+
+
+  match 'user/destroy/:id' => 'user#destroy', :via => :delete, :as => :admin_destroy_user
 
 
   #get 'profiles/edit' => 'profiles#edit'

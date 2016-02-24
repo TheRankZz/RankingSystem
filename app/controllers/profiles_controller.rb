@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to root_path, notice: 'Profile was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Profil wurde erfolgreich erstellt.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to edit_profile_path(current_user.profile), notice: 'Profile was successfully updated.' }
+        format.html { redirect_to edit_profile_path(current_user.profile), notice: 'Profil wurde erfolgreich geändert.' }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
