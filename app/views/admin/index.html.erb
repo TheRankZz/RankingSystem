@@ -1,26 +1,26 @@
-<br/>
-<br/>
+<div class="page-header">
+  <h2>Verwaltung</h2>
+</div>
 
  <div class="row">
-   <div style="text-align: right;" class="col-sm-12 col-md-3 col-md-offset-3">
+   <div class="col-md-6 col-md-offset-3">
      <%= link_to admin_users_path, class: "btn btn-default btn-huge" do %>
          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
          <br/>
-         Benutzerverwaltung
+         Benutzer
      <% end %>
-   </div>
-   <div style="text-align: left;" class="col-sm-12 col-md-3">
+
      <%= link_to admin_games_path, class: "btn btn-default btn-huge" do %>
          <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
          <br/>
-         Spieleverwaltung
+         Spiele
      <% end %>
    </div>
  </div>
 
 
  <div class="row">
-   <div style="text-align: right;" class="col-sm-12 col-md-3 col-md-offset-3">
+   <div class="col-md-3 col-md-offset-3">
      <%= link_to admin_comments_path, class: "btn btn-default btn-huge" do %>
          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
          <br/>

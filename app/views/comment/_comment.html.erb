@@ -27,18 +27,26 @@
               <%= 'Benutzer gelöscht' %>
           <% end %>
           &nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at %></span>
-        <% if (current_user.id == comment.user_id) || (current_user.has_role? :admin) %>
-            <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
-        <% else %>
-            <%= link_to 'Melden', comment_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+        <% if (!showAdmin) && (user_signed_in?) %>
+            <% if (current_user.id != comment.user_id) && (!comment.notify?) %>
+                <%= link_to 'Melden', comment_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+            <% elsif (current_user.id == comment.user_id) %>
+                <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+            <% end %>
         <% end %>
       </div>
       <div class="panel-body">
         <%= simple_format(comment.text, {}, wrapper_tag: "div") %>
-
+        <br/>
         <% if comment.notify? %>
-            <%= 'Kommentar wurde gemeldet' %>
+            <div class="alert alert-warning" role="alert">Dieser Kommentar wurde gemeldet und wird überprüft!</div>
         <% end %>
+
+        <% if showAdmin %>
+            <%= link_to 'Zurücksetzen', comment_reset_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'btn btn-default' %>
+            <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+        <% end %>
+
       </div><!-- /panel-body -->
     </div><!-- /panel panel-default -->
   </div><!-- /col-sm-5 -->

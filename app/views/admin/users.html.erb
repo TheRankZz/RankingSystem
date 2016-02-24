@@ -1,27 +1,34 @@
+<div class="page-header">
+  <h2>Benutzer</h2>
+</div>
+
 <div class="table-responsive">
   <table class="table table-hover table-striped">
     <thead>
     <tr>
-      <th>ID</th>
-      <th class="hidden-xs">Email</th>
+      <th>Benutzer</th>
       <th class="hidden-xs">Name</th>
+      <th class="hidden-xs">Letzte Anmeldung</th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
     <% @users.each do |user| %>
         <tr>
-          <td class="hidden-xs"><%= user.id %></td>
-          <td class="hidden-xs"><%= user.email %></td>
+          <td><%= user.email %></td>
           <td class="hidden-xs">
             <% if !user.profile.nil? %>
                 <%= user.profile.username %>
             <% end %>
           </td>
-          <td>
+          <td class="hidden-xs">
+            <%= user.current_sign_in_at %>
+          </td>
+          <td class="text-right" >
             <% if (current_user.id != user.id) && (current_user.has_role? :admin) %>
-                <%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+                <%= link_to "Löschen", admin_destroy_user_path(user), method: :delete, data: {confirm: "You sure?"} %>
             <% end %>
-            </td>
+          </td>
         </tr>
     <% end %>
     </tbody>

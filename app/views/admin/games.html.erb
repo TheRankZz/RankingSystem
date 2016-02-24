@@ -1,11 +1,13 @@
 <div class="row page-header">
   <div class="col-md-10">
-    <h2>Spieleveraltung</h2>
+    <h2>Spiele</h2>
   </div>
   <div class="col-md-2">
         <%= link_to 'Neues Spiel anlegen', new_game_path, :class => "btn btn-default" %>
   </div>
-</div><% if !@games.nil? %>
+</div>
+
+<% if !@games.nil? %>
     <div class="table-responsive">
       <table class="table table-hover table-striped">
         <thead>
