@@ -96,3 +96,27 @@ de:
     unlocks:
       new:
         resend_unlock_instructions: Anleitung zum Entsperren noch mal schicken
+  controller:
+    comment:
+      create:
+        success: 'Kommentar wurde erfolgreich abgegeben.'
+      destroy:
+        success: 'Kommentar wurde erfolgreich gelöscht.'
+      reset_notify:
+        success: 'Kommentar wurde zurückgesetzt!'
+        fail: 'Kommentar wurde nicht zurückgesetzt!'
+    games:
+      create:
+        success: 'Spiel wurde erfolgreich erstellt.'
+      update:
+        success: 'Spiel wurde erfolgreich geändert.'
+      destroy:
+        success: 'Spiel wurde erfolgreich gelöscht.'
+    profiles:
+      create:
+        success: 'Profil wurde erfolgreich erstellt.'
+      update:
+        success: 'Profil wurde erfolgreich geändert.'
+    user:
+      destroy:
+        success: "User wurde erfolgreich gelöscht."

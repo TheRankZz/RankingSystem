@@ -16,7 +16,7 @@ class CommentController < ApplicationController
     end
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde gemeldet' }
+        format.html { redirect_to game_path(:id => @comment.game_id), notice: t('controller.comment.create.success') }
       else
         format.html { render :new }
       end
@@ -34,9 +34,9 @@ class CommentController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to admin_comments_path, notice: 'Kommentar wurde zurückgesetzt!' }
+        format.html { redirect_to admin_comments_path, notice: t('controller.comment.reset_notify.success') }
       else
-        format.html { redirect_to admin_comments_path, notice: 'Kommentar konnte nicht zurückgesetzt werden!' }
+        format.html { redirect_to admin_comments_path, notice: t('controller.comment.reset_notify.fail') }
       end
     end
   end
@@ -49,7 +49,7 @@ class CommentController < ApplicationController
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde erfolgreich abgegeben.' }
+        format.html { redirect_to game_path(:id => @comment.game_id), notice: t('controller.comment.create.success') }
       else
         format.html { render :new }
       end
@@ -68,13 +68,13 @@ class CommentController < ApplicationController
 
     respond_to do |format|
       if params[:redirect] == 'admin'
-        format.html { redirect_to admin_comments_path, notice: 'Comment was successfully destroyed.' }
+        format.html { redirect_to admin_comments_path, notice: t('controller.comment.destroy.success') }
         format.json { head :no_content }
       else
-        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully destroyed.' }
+        format.html { redirect_to game_path(:id => @comment.game_id), notice: t('controller.comment.destroy.success') }
         format.json { head :no_content }
       end
-      format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde erfolgreich gelöscht.' }
+      format.html { redirect_to game_path(:id => @comment.game_id), notice: t('controller.comment.destroy.success') }
       format.json { head :no_content }
     end
   end
