@@ -49,7 +49,7 @@ class CommentController < ApplicationController
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully created.' }
+        format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde erfolgreich abgegeben.' }
       else
         format.html { render :new }
       end
@@ -74,6 +74,8 @@ class CommentController < ApplicationController
         format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Comment was successfully destroyed.' }
         format.json { head :no_content }
       end
+      format.html { redirect_to game_path(:id => @comment.game_id), notice: 'Kommentar wurde erfolgreich gelöscht.' }
+      format.json { head :no_content }
     end
   end
 
