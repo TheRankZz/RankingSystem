@@ -37,6 +37,7 @@ de:
         developer: Entwickler
         description: Beschreibung
         releasedate: Erscheinungsdatum
+        platform: Plattform
     models:
       user: Benutzer
   devise:
