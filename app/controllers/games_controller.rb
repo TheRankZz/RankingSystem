@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
   load_and_authorize_resource except: [:create, :update, :destroy]
-
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
@@ -9,24 +8,25 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @navbar = 'Liste'
+    @navbar = 'list'
     @games = Game.getAllGamesOrderByRanking
   end
 
   # GET /games/1
   # GET /games/1.json
   def show
-    @navbar = 'Liste'
     @comment = Comment.new
   end
 
   # GET /games/new
   def new
+    @navbar = 'admin'
     @game = Game.new
   end
 
   # GET /games/1/edit
   def edit
+    @navbar = 'admin'
   end
 
   # POST /games

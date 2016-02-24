@@ -1,2 +1,5 @@
-<h1>Admin#comments</h1>
-<p>Find me in app/views/admin/comments.html.erb</p>
+<div class="page-header">
+  <h2>Gemeldete Kommentare</h2>
+</div>
+
+<%= render partial: 'comment/comment', collection: @comments, locals: { showAdmin: true } %>

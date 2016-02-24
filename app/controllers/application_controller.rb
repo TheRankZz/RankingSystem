@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   # end
 
   def after_sign_in_path_for(resource_or_scope)
+    # Wenn der Benutzer noch kein Profil hat, dann weiterleiten auf profile/create
     if current_user.profile.nil?
       new_profile_path
     else

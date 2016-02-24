@@ -10,11 +10,15 @@
 </head>
 <body>
 <%= render "shared/nav" %>
-<div style="margin-top: 56px;" class="container">
+<div style="margin-top: 56px; margin-bottom: 50px;" class="container">
   <%= yield %>
 </div>
 
 <%= render "shared/notice" %>
-
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Platziere hier den Inhalt für den fixierten Footer.</p>
+  </div>
+</footer>
 </body>
 </html>

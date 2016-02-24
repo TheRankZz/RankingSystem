@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @navbar = 'Home'
+    @navbar = 'home'
     @topgames = Game.getGamesWithRanking.limit(5)
     @newgames = Game.getGamesOrderByReleaseDate.limit(5)
   end

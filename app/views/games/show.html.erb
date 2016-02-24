@@ -1,36 +1,36 @@
 <% @page_title = @game.title %>
 <br/>
+<h2 class="no-margin-top visible-xs-block visible-sm-block"><%= @game.title %> <br/>
+  <small>von <%= @game.developer %></small>
+</h2>
 <div class="row">
   <div class="col-md-4">
     <%= image_tag @game.image.url(:medium), :class => "img-rounded img-center" %>
     <hr/>
     <div class="row">
-      <div class="col-xs-5 col-sm-12 col-md-5"><strong>Spieldesign:</strong></div>
-      <div class="col-xs-7 col-sm-12 col-md-5">
+      <div class="col-xs-5 col-sm-5 col-md-5"><strong>Spieldesign:</strong></div>
+      <div class="col-xs-7 col-sm-7 col-md-5">
         <%= rating_for @game, "SPIELDESIGN", {star: 5, cancel: true, readonly: true} %>
       </div>
     </div>
     <br/>
     <div class="row">
-      <div class="col-xs-5 col-sm-12 col-md-5"><strong>Story/Atmosphäre:</strong></div>
-      <div class="col-xs-7 col-sm-12 col-md-5">
+      <div class="col-xs-5 col-sm-5 col-md-5"><strong>Story/Atmosphäre:</strong></div>
+      <div class="col-xs-7 col-sm-7 col-md-5">
         <%= rating_for @game, "STORY", {star: 5, cancel: true, readonly: true} %>
       </div>
     </div>
     <br/>
     <div class="row">
-      <div class="col-xs-5 col-sm-12 col-md-5"><strong>Umfang:</strong></div>
-      <div class="col-xs-7 col-sm-12 col-md-5">
+      <div class="col-xs-5 col-sm-5 col-md-5"><strong>Umfang:</strong></div>
+      <div class="col-xs-7 col-sm-7 col-md-5">
         <%= rating_for @game, "UMFANG", {star: 5, cancel: true, readonly: true} %>
       </div>
     </div>
   </div>
-
+  <br class="visible-xs-block visible-sm-block"/>
   <div class="col-md-8">
-    <div class="visible-xs-block">
-      <hr/>
-    </div>
-    <h2 class="no-margin-top"><%= @game.title %> <br/>
+    <h2 class="no-margin-top hidden-xs hidden-sm"><%= @game.title %> <br/>
       <small>von <%= @game.developer %></small>
     </h2>
     <%= rating_for @game, "GESAMT", {readonly: true} %>
@@ -64,4 +64,4 @@
 <% if user_signed_in? %>
     <%= render 'comment/new', game_id: @game.id, user_id: current_user.id %>
 <% end %>
-<%= render partial: 'comment/comment', collection: @game.comments %>
+<%= render partial: 'comment/comment', collection: @game.comments, locals: { showAdmin: false } %>

@@ -10,15 +10,13 @@ class Game < ActiveRecord::Base
   has_many :game_platforms, :dependent  => :delete_all
   has_many :platforms, through: :game_platforms
 
-
-  TYPES = ["GESAMT", "UMFANG", "STORY", "SPIELDESIGN"]
-  ratyrate_rateable *TYPES
-
+  has_many :comments, :dependent  => :delete_all
 
   has_many :rating_caches, :foreign_key => "cacheable_id", :class_name => "RatingCache"
 
 
-  has_many :comments
+  TYPES = ["GESAMT", "UMFANG", "STORY", "SPIELDESIGN"]
+  ratyrate_rateable *TYPES
 
 
   # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
@@ -33,7 +31,7 @@ class Game < ActiveRecord::Base
 
 
   def self.search(search)
-    joins(:genres).where("title LIKE ? OR description LIKE ? OR developer LIKE ? OR genres.name LIKE ?",
+    joins(:genres).where("title ILIKE ? OR description ILIKE ? OR developer ILIKE ? OR genres.name ILIKE ?",
                          "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
         .distinct
   end
