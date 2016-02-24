@@ -25,7 +25,7 @@
         <% @games.each do |game | %>
             <% i = i + 1 %>
             <tr>
-              <td ><%= link_to game.title, game %></td>
+              <td class="xs-cut-word"><%= link_to game.title, game %></td>
               <td class="hidden-xs"><%= game.developer %></td>
               <td class="hidden-xs"><%= game.releasedate %></td>
               <td class="text-right">
