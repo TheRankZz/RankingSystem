@@ -18,17 +18,15 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
+
 de:
-  date:
-    formats:
-      default: '%d.%m.%Y'
   activerecord:
     attributes:
       user:
-        current_password: Aktuelles Passwort
+        current_password: Bisheriges Passwort
         email: E-Mail
         password: Passwort
-        password_confirmation: Passwort bestätigen
+        password_confirmation: Passwortbestätigung
         remember_me: Angemeldet bleiben
       profile:
         username: Benutzername
@@ -39,10 +37,9 @@ de:
         developer: Entwickler
         description: Beschreibung
         releasedate: Erscheinungsdatum
+        platform: Plattform
     models:
       user: Benutzer
-      genre: Genre
-      platform: Plattform
   devise:
     confirmations:
       new:
@@ -99,8 +96,27 @@ de:
     unlocks:
       new:
         resend_unlock_instructions: Anleitung zum Entsperren noch mal schicken
-  views:
   controller:
     comment:
       create:
         success: 'Kommentar wurde erfolgreich abgegeben.'
+      destroy:
+        success: 'Kommentar wurde erfolgreich gelöscht.'
+      reset_notify:
+        success: 'Kommentar wurde zurückgesetzt!'
+        fail: 'Kommentar wurde nicht zurückgesetzt!'
+    games:
+      create:
+        success: 'Spiel wurde erfolgreich erstellt.'
+      update:
+        success: 'Spiel wurde erfolgreich geändert.'
+      destroy:
+        success: 'Spiel wurde erfolgreich gelöscht.'
+    profiles:
+      create:
+        success: 'Profil wurde erfolgreich erstellt.'
+      update:
+        success: 'Profil wurde erfolgreich geändert.'
+    user:
+      destroy:
+        success: "User wurde erfolgreich gelöscht."

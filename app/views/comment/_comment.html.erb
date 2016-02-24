@@ -26,7 +26,7 @@
           <% else %>
               <%= 'Benutzer gelöscht' %>
           <% end %>
-          &nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at %></span>
+          &nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at.strftime("%d %b. %Y um %H:%M ") %></span>
         <% if (!showAdmin) && (user_signed_in?) %>
             <% if (current_user.id != comment.user_id) && (!comment.notify?) %>
                 <%= link_to 'Melden', comment_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
