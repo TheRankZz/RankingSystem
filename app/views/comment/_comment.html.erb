@@ -44,7 +44,7 @@
 
         <% if showAdmin %>
             <%= link_to 'Zurücksetzen', comment_reset_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'btn btn-default' %>
-            <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+            <%= link_to 'Löschen', comment_destroy_path(:id => comment.id, :redirect => 'admin'), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
         <% end %>
 
       </div><!-- /panel-body -->

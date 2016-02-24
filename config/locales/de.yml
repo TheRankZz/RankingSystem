@@ -18,15 +18,17 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 de:
+  date:
+    formats:
+      default: '%d.%m.%Y'
   activerecord:
     attributes:
       user:
-        current_password: Bisheriges Passwort
+        current_password: Aktuelles Passwort
         email: E-Mail
         password: Passwort
-        password_confirmation: Passwortbestätigung
+        password_confirmation: Passwort bestätigen
         remember_me: Angemeldet bleiben
       profile:
         username: Benutzername
@@ -39,6 +41,8 @@ de:
         releasedate: Erscheinungsdatum
     models:
       user: Benutzer
+      genre: Genre
+      platform: Plattform
   devise:
     confirmations:
       new:
@@ -95,3 +99,8 @@ de:
     unlocks:
       new:
         resend_unlock_instructions: Anleitung zum Entsperren noch mal schicken
+  views:
+  controller:
+    comment:
+      create:
+        success: 'Kommentar wurde erfolgreich abgegeben.'

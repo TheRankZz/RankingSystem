@@ -40,15 +40,15 @@
     <p>
       <%= @game.description %>
     </p>
-    <strong>ReleaseDate:</strong>
-    <%= @game.releasedate %>
+    <%= label_tag(t('activerecord.attributes.game.releasedate')) %>
+    <%= l @game.releasedate, format: :default %>
     <br/>
-    <strong>Genre:</strong>
+    <%= label_tag(t('activerecord.models.genre')) %>
     <% @game.genres.each do |g| %>
         <%= g.name %> |
     <% end %>
     <br/>
-    <strong>Platform:</strong>
+    <%= label_tag(t('activerecord.models.platform')) %>
     <% @game.platforms.each do |g| %>
         <%= g.name %> |
     <% end %>

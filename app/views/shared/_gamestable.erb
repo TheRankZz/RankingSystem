@@ -22,7 +22,7 @@
               <% end %>
               <td><%= link_to game.title, game %></td>
               <td class="hidden-xs"><%= game.developer %></td>
-              <td class="hidden-xs"><%= game.releasedate %></td>
+              <td class="hidden-xs"><%= l game.releasedate, format: :default %></td>
               <td><%= rating_for game, "GESAMT", {readonly: true} %></td>
               <% if !search %>
                   <td style="width: 50px;"><%= i <= 3 ? '<span class="badge red">TOP</span>'.html_safe : '' %></td>
