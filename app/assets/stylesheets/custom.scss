@@ -70,6 +70,13 @@ div.star {
 
 @media (max-width: 767px) {
   .navbar-nav.pull-right { float: none!important; }
+  .xs-cut-word > a{
+    width: 200px !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+  }
 }
 
 

@@ -8,7 +8,7 @@ gem 'rails', '4.2.5'
 #gem 'sqlite3'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '0.18.4'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -44,8 +44,8 @@ gem 'autoprefixer-rails', '6.3.2'
 gem 'paperclip', '4.3.5'
 gem 'devise', '3.5.6'
 gem 'ratyrate', '1.2.2.alpha'
-gem 'rolify'
-gem 'cancan'
+gem 'rolify', '5.0.0'
+gem 'cancan', '1.6.10'
 
 # nico rspec Tests
 group :development, :test do
