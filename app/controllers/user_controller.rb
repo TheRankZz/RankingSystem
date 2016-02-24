@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  authorize_resource :class => UserController
 
   # DELETE /user/edit/1
   def destroy

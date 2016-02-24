@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles/new
   def new
