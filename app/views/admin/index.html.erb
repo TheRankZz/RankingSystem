@@ -1,7 +1,7 @@
 <% @page_title = "Verwaltung" %>
 
 <div class="page-header">
-  <h2>Verwaltung</h2>
+  <h2><%= t('views.admin.index.header') %></h2>
 </div>
 
  <div class="row">
@@ -9,13 +9,13 @@
      <%= link_to admin_users_path, class: "btn btn-default btn-huge" do %>
          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
          <br/>
-         Benutzer
+         <%= t('views.admin.index.button_users') %>
      <% end %>
 
      <%= link_to admin_games_path, class: "btn btn-default btn-huge" do %>
          <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
          <br/>
-         Spiele
+         <%= t('views.admin.index.button_games') %>
      <% end %>
    </div>
  </div>
@@ -26,7 +26,7 @@
      <%= link_to admin_comments_path, class: @commentClass do %>
          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
          <br/>
-         Gemeldete Kommentare
+         <%= t('views.admin.index.button_comments') %>
          <span class="badge info"><%= @countcomments %></span>
      <% end %>
    </div>

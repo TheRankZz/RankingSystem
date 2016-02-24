@@ -1,16 +1,16 @@
 <% @page_title = "Verwaltung" %>
 
 <div class="page-header">
-  <h2>Benutzer</h2>
+  <h2><%= t('views.admin.users.header') %></h2>
 </div>
 
 <div class="table-responsive">
   <table class="table table-hover table-striped">
     <thead>
     <tr>
-      <th>Benutzer</th>
-      <th class="hidden-xs">Name</th>
-      <th class="hidden-xs">Letzte Anmeldung</th>
+      <th><%= t('views.admin.users.th_user') %></th>
+      <th class="hidden-xs"><%= t('views.admin.users.th_username') %></th>
+      <th class="hidden-xs"><%= t('views.admin.users.th_last_login') %></th>
       <th></th>
     </tr>
     </thead>
@@ -28,7 +28,8 @@
           </td>
           <td class="text-right" >
             <% if (current_user.id != user.id) && (current_user.has_role? :admin) %>
-                <%= link_to "Löschen", admin_destroy_user_path(user), method: :delete, data: {confirm: "You sure?"} %>
+                <%= link_to t('views.admin.users.button_delete'), admin_destroy_user_path(user), method: :delete,
+                            data: {confirm: t('views.admin.users.confirm_delete')} %>
             <% end %>
           </td>
         </tr>

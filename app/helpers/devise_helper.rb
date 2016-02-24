@@ -10,7 +10,6 @@ module DeviseHelper
 
     html = <<-HTML
     <div class="alert alert-danger alert-block">
-      <h4>#{sentence}</h4>
       #{messages}
     </div>
     HTML

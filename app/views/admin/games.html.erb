@@ -2,10 +2,10 @@
 
 <div class="row page-header">
   <div class="col-md-10">
-    <h2>Spiele</h2>
+    <h2><%= t('views.admin.games.header') %></h2>
   </div>
   <div class="col-md-2">
-        <%= link_to 'Neues Spiel anlegen', new_game_path, :class => "btn btn-default" %>
+        <%= link_to t('views.admin.games.button_new'), new_game_path, :class => "btn btn-default" %>
   </div>
 </div>
 
@@ -14,9 +14,9 @@
       <table class="table table-hover table-striped">
         <thead>
         <tr>
-          <th>Spiel</th>
-          <th class="hidden-xs">Entwickler</th>
-          <th class="hidden-xs">Erscheinungsdatum</th>
+          <th><%= t('views.admin.games.th_game') %></th>
+          <th class="hidden-xs"><%= t('views.admin.games.th_developer') %></th>
+          <th class="hidden-xs"><%= t('views.admin.games.th_releasedate') %></th>
           <th class=""></th>
         </tr>
         </thead>
@@ -29,8 +29,8 @@
               <td class="hidden-xs"><%= game.developer %></td>
               <td class="hidden-xs"><%= game.releasedate %></td>
               <td class="text-right">
-                <%= link_to 'Bearbeiten', edit_game_path(game) %> |
-                <%= link_to 'Löschen', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to t('views.admin.games.button_edit'), edit_game_path(game) %> |
+                <%= link_to t('views.admin.games.button_delete'), game, method: :delete, data: { confirm: t('views.admin.games.confirm_delete') } %>
               </td>
             </tr>
         <% end %>

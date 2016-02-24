@@ -2,7 +2,7 @@
     <!-- Button trigger modal -->
     |
     <a href="#" data-toggle="modal" data-target="#myModal">
-      Meine Bewertung
+      <%= t('views.games.myrating.show_link') %>
     </a>
 
     <!-- Modal -->
@@ -10,33 +10,33 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-             <h4 class="modal-title" id="myModalLabel">Meine Bewertung</h4>
+             <h4 class="modal-title" id="myModalLabel"><%= t('views.games.myrating.header') %></h4>
           </div>
           <div class="modal-body">
 
             <div class="row">
-              <div class="col-md-3 col-md-offset-2"><strong>Gesamt:</strong></div>
+              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.total') %></strong></div>
               <div class="col-md-4">
                 <%= rating_for_user @game, current_user ,"GESAMT", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
               </div>
             </div>
             <hr/>
             <div class="row">
-              <div class="col-md-3 col-md-offset-2"><strong>Spieldesign:</strong></div>
+              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.design') %></strong></div>
               <div class="col-md-4">
                 <%= rating_for_user @game, current_user, "SPIELDESIGN", { star: 5, cancel: true, readonly: false, cancel_place: 'right'  } %>
               </div>
             </div>
             <br/>
             <div class="row">
-              <div class="col-md-3 col-md-offset-2"><strong>Story/Atmosphäre:</strong></div>
+              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.story') %></strong></div>
               <div class="col-md-4">
                 <%= rating_for_user @game, current_user, "STORY", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
               </div>
             </div>
             <br/>
             <div class="row">
-              <div class="col-md-3 col-md-offset-2"><strong>Umfang:</strong></div>
+              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.umfang') %></strong></div>
               <div class="col-md-4">
                 <%= rating_for_user @game, current_user, "UMFANG", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
               </div>
@@ -44,7 +44,7 @@
 
           </div>
           <div class="modal-footer">
-            <%= link_to 'OK', @game, :class => 'btn btn-primary' %>
+            <%= link_to t('views.games.myrating.button_ok'), @game, :class => 'btn btn-primary' %>
           </div>
         </div>
       </div>

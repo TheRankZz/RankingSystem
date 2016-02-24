@@ -4,12 +4,12 @@
         <thead>
         <tr>
           <% if !search %>
-              <th class="hidden-xs">Rang</th>
+              <th class="hidden-xs"><%= t('views.shared.gamestable.rank') %></th>
           <% end %>
-          <th>Spiel</th>
-          <th class="hidden-xs">Entwickler</th>
-          <th class="hidden-xs">Erscheinungsdatum</th>
-          <th colspan="2">Bewertung</th>
+          <th><%= t('views.shared.gamestable.game') %></th>
+          <th class="hidden-xs"><%= t('views.shared.gamestable.developer') %></th>
+          <th class="hidden-xs"><%= t('views.shared.gamestable.releasedate') %></th>
+          <th colspan="2"><%= t('views.shared.gamestable.ranking') %></th>
         </tr>
         </thead>
         <tbody>
@@ -33,5 +33,5 @@
       </table>
     </div>
 <% elsif search %>
-    <h4>Es wurde leider kein Spiel gefunden!</h4>
+    <h4><%= t('views.shared.gamestable.games_not_found') %></h4>
 <% end %>

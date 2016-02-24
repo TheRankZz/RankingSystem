@@ -51,7 +51,7 @@ class CommentController < ApplicationController
       if @comment.save
         format.html { redirect_to game_path(:id => @comment.game_id), notice: t('controller.comment.create.success') }
       else
-        format.html { render :new }
+        format.html { redirect_to game_path(:id => @comment.game_id), notice: t('controller.comment.create.fail') }
       end
     end
   end

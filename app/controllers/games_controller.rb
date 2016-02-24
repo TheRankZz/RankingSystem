@@ -36,7 +36,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to admin_games_path, notice: t('games.create.success') }
+        format.html { redirect_to admin_games_path, notice: t('controller.games.create.success') }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }

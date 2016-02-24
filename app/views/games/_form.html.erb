@@ -8,9 +8,9 @@
 
 <div class="page-header">
 
-  <%= link_to 'Abbrechen', admin_games_path, :class => "btn btn-danger" %>
+  <%= link_to t('views.games.form.button_cancel'), admin_games_path, :class => "btn btn-danger" %>
 
-  <%= f.submit "Speichern", :class => 'btn btn-primary' %>
+  <%= f.submit t('views.games.form.button_submit'), :class => 'btn btn-primary' %>
 </div>
 <div class="row">
   <div class="col-md-4">
@@ -49,12 +49,24 @@
 
     <div class="form-group">
       <%= f.label :genre %>
-      <%= f.collection_select :genre_ids, Genre.all, :id, :name, {selected: @game.genre_ids }, multiple: true, :class => 'form-control' %>
+      <br/>
+      <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name do |b| %>
+          <div  class="checkbox-inline">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+      <% end %>
     </div>
 
     <div class="form-group">
       <%= f.label :platform %>
-      <%= f.collection_select :platform_ids, Platform.all, :id, :name, {selected: @game.platform_ids }, multiple: true, :class => 'form-control' %>
+      <br/>
+      <%= f.collection_check_boxes :platform_ids, Platform.all, :id, :name do |b| %>
+          <div  class="checkbox-inline">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+      <% end %>
     </div>
 
   </div>
@@ -67,7 +79,7 @@
     language: "de",
     orientation: "bottom left",
     autoclose: true,
-    defaultViewDate: { year: 2006, month: 01, day: 01 },
-    format: "yyyy-mm-dd"
+    defaultViewDate: { year: 2016, month: 01, day: 01 },
+    format: "dd.mm.yyyy"
   })
 </script>

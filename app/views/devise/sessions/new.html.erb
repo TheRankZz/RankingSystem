@@ -3,7 +3,7 @@
     <div class="container form-signin">
         <h2 class="form-signin-heading">Anmelden</h2>
         <hr/>
-        <%= devise_error_messages! %>
+      <%= devise_error_messages! %>
         <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
         <br/>
         <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password"  %>

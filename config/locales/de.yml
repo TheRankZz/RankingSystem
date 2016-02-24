@@ -18,105 +18,169 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
+#de.activerecord.errors.models.user.attributes.current_password.blank
 de:
+  date:
+    formats:
+      default: '%d.%m.%Y'
   activerecord:
     attributes:
       user:
-        current_password: Bisheriges Passwort
-        email: E-Mail
-        password: Passwort
-        password_confirmation: Passwortbestätigung
-        remember_me: Angemeldet bleiben
+        current_password: 'Aktuelles Passwort'
+        email: 'E-Mail'
+        password: 'Passwort'
+        password_confirmation: 'Passwort bestätigen'
+        remember_me: 'Angemeldet bleiben'
       profile:
-        username: Benutzername
-        firstname: Vorname
-        lastname: Nachname
+        username: 'Benutzername'
+        firstname: 'Vorname'
+        lastname: 'Nachname'
       game:
-        title: Titel
-        developer: Entwickler
-        description: Beschreibung
-        releasedate: Erscheinungsdatum
-        platform: Plattform
+        title: 'Titel'
+        developer: 'Entwickler'
+        description: 'Beschreibung'
+        releasedate: 'Erscheinungsdatum'
     models:
-      user: Benutzer
-  devise:
-    confirmations:
-      new:
-        resend_confirmation_instructions: Anleitung zur Bestätigung noch mal schicken
-    mailer:
-      confirmation_instructions:
-        action: Mein Konto bestätigen
-        greeting: Willkommen %{recipient}!
-        instruction: 'Folgen Sie dem untenstehenden Link, um Ihr Konto zu bestätigen:'
-      reset_password_instructions:
-        action: Passwort ändern
-        greeting: Hallo %{recipient}!
-        instruction: Jemand hat einen Link angefordert, um Ihr Passwort zu ändern. Klicken Sie auf den unten aufgeführten Link um das Passwort zu ändern.
-        instruction_2: Bitte ignorieren Sie diese E-Mail, wenn Sie kein neues Passwort angefordert haben.
-        instruction_3: Das Passwort wird nicht geändert bis Sie den obenstehenden Link abrufen und ein neues Passwort bestimmen.
-      unlock_instructions:
-        action: Mein Konto entsperren
-        greeting: Hallo %{recipient}!
-        instruction: 'Folgen Sie dem untenstehenden Link, um Ihr Konto zu entsperren:'
-        message: Ihr Konto wurde aufgrund einer großen Anzahl von fehlgeschlagenen Anmeldeversuchen gesperrt.
-    passwords:
-      edit:
-        change_my_password: "Ändere mein Passwort"
-        change_your_password: Passwort ändern
-        confirm_new_password: Neues Passwort bestätigen
-        new_password: Neues Passwort
-      new:
-        forgot_your_password: Haben Sie Ihr Passwort vergessen?
-        send_me_reset_password_instructions: Schicken Sie mir die Anleitung, mein Passwort zurückzusetzen
-    registrations:
-      edit:
-        are_you_sure: Sind Sie sicher?
-        cancel_my_account: Konto löschen
-        currently_waiting_confirmation_for_email: Warte auf Bestätigung von %{email}.
-        leave_blank_if_you_don_t_want_to_change_it: freilassen, wenn Sie das nicht ändern wollen
-        title: "%{resource} bearbeiten"
-        unhappy: Unglücklich
-        update: Aktualisieren
-        we_need_your_current_password_to_confirm_your_changes: wir benötigen Ihr aktuelles Passwort, um die Änderung zu bestätigen
-      new:
-        sign_up: Registrieren
-    sessions:
-      new:
-        sign_in: Anmelden
-    shared:
-      links:
-        back: Zurück
-        didn_t_receive_confirmation_instructions: Keine Anleitung zur Bestätigung erhalten?
-        didn_t_receive_unlock_instructions: Keine Anleitung zum Entsperren erhalten?
-        forgot_your_password: Passwort vergessen?
-        sign_in: Anmelden
-        sign_in_with_provider: Mit %{provider} anmelden
-        sign_up: Registrieren
-    unlocks:
-      new:
-        resend_unlock_instructions: Anleitung zum Entsperren noch mal schicken
+      user: 'Benutzer'
+      genre: 'Genre'
+      platform: 'Plattform'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'darf nicht leer sein'
+              invalid: 'ist ungültig'
+            current_password:
+              blank: 'fehlt'
+            password:
+              blank: 'darf nicht leer sein'
+              too_short: 'zu kurz'
+            password_confirmation:
+              confirmation: 'stimmt nicht überein'
+
   controller:
     comment:
       create:
-        success: 'Kommentar wurde erfolgreich abgegeben.'
+        success: 'Kommentar wurde erfolgreich gespeichert'
+        fail: 'Kommentar konnte nicht gespeichert werden'
       destroy:
-        success: 'Kommentar wurde erfolgreich gelöscht.'
+        success: 'Kommentar wurde erfolgreich entfernt'
       reset_notify:
-        success: 'Kommentar wurde zurückgesetzt!'
-        fail: 'Kommentar wurde nicht zurückgesetzt!'
+        success: 'Der gemeldete Kommentar wurde zurückgesetzt'
+        fail:    'Der gemeldete Kommentar konnte nicht zurückgesetzt werden'
     games:
       create:
-        success: 'Spiel wurde erfolgreich erstellt.'
+        success: 'Spiel wurde erfolgreich angelegt'
       update:
-        success: 'Spiel wurde erfolgreich geändert.'
+        success: 'Spiel wurde erfolgreich geändert'
       destroy:
-        success: 'Spiel wurde erfolgreich gelöscht.'
+        success: 'Spiel wurde erfolgreich entfernt'
     profiles:
       create:
-        success: 'Profil wurde erfolgreich erstellt.'
+        success: 'Profil wurde erfolgreich angelegt'
       update:
-        success: 'Profil wurde erfolgreich geändert.'
+        success: 'Profil wurde erfolgreich geändert'
     user:
       destroy:
-        success: "User wurde erfolgreich gelöscht."
+        success: "Benutzer wurde erfolgreich entfernt"
+  views:
+    home:
+      index:
+        welcome: 'Willkommen'
+        description: 'Herzlich Willkommen auf der neuen Spieleranking Webseite für alle, die an Spiele interessiert sind.
+                        Hier hast du die Möglichkeit Spiele zu kommentieren und zu bewerten, um anderen Menschen an deinen Erfahrungen teilhaben zu lassen.
+                        Auf dieser Seite findest du von den neusten Spielen bis hin zu den Oldies alles was dich interessiert.'
+        top: 'Top 5'
+        new: 'Neueste Spiele'
+    shared:
+      nav:
+        home: 'HOME'
+        search: 'SUCHE'
+        list: 'BESTENLISTE'
+        admin: 'VERWALTUNG'
+        edit_user: 'Kontoeinstellungen'
+        edit_profile: 'Profil bearbeiten'
+        logout: 'Abmelden'
+        login: 'ANMELDEN'
+        new_user: 'REGISTRIEREN'
+      gamestable:
+        rank: 'Rang'
+        game: 'Spiel'
+        developer: 'Entwickler'
+        releasedate: 'Erscheinungsdatum'
+        ranking: 'Bewertung'
+        games_not_found: 'Es wurden leider keine Spiele gefunden'
+    profiles:
+      form:
+        button_submit: 'Speichern'
+      edit:
+        header: 'Profil bearbeiten'
+      new:
+        header: 'Neues Profil anlegen'
+    games:
+      show:
+        comments: 'Kommentare'
+        button_buy: 'Hier kaufen'
+        umfang: 'Umfang:'
+        story: 'Story/Atmosphäre:'
+        design: 'Spieldesign:'
+        total: 'Gesamt:'
+      new:
+        header: 'Neues Spiel anlegen'
+      edit:
+        header: 'Spiel bearbeiten'
+      index:
+        header: 'Bestenliste'
+      myrating:
+        show_link: 'Meine Bewertung'
+        header: 'Meine Bewertung'
+        button_ok: 'Ok'
+        umfang: 'Umfang:'
+        story: 'Story/Atmosphäre:'
+        design: 'Spieldesign:'
+        total: 'Gesamt:'
+      form:
+        button_submit: 'Speichern'
+        button_cancel: 'Abbrechen'
+    comment:
+      comment:
+        user_deleted: 'Gelöschter Benutzer'
+        button_notify: 'Melden'
+        button_delete: 'Löschen'
+        button_reset: 'Zurücksetzen'
+        alert_notify: 'Dieser Kommentar wurde gemeldet und wird überprüft'
+        confirm_notify: 'Wollen Sie diesen Kommentar wirklick melden?'
+        confirm_delete: 'Wollen Sie diesen Kommentar wirklich löschen?'
+      new:
+        placeholder: 'Schreibe einen Kommentar...'
+        button_submit: 'Abschicken'
+    admin:
+      index:
+        header: 'Verwaltung'
+        button_users: 'Benutzer'
+        button_comments: 'Gemeldete Kommentare'
+        button_games: 'Spiele'
+      games:
+        header: 'Spiele'
+        button_new: 'Neues Spiel anlegen'
+        th_game: 'Spiel'
+        th_developer: 'Entwickler'
+        th_releasedate: 'Erscheinungsdatum'
+        button_delete: 'Löschen'
+        button_edit: 'Bearbeiten'
+        confirm_delete: 'Wollen Sie wirklich das Spiel löschen?'
+      users:
+        header: 'Benutzer'
+        th_user: 'Benutzer'
+        th_username: 'Benutzername'
+        th_last_login: 'Letzte Anmeldung'
+        button_delete: 'Löschen'
+        confirm_delete: 'Wollen Sie wirklich diesen Benutzer löschen?'
+      comments:
+        header: 'Gemeldete Kommentare'
+    search:
+      result:
+        placeholder: 'Nach Spielen suchen...'
+
+

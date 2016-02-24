@@ -24,14 +24,16 @@
                   <%= comment.user.email %>
               <% end %>
           <% else %>
-              <%= 'Benutzer gelöscht' %>
+              <%= t('views.comment.comment.user_deleted') %>
           <% end %>
           &nbsp;|&nbsp;</strong><span class="text-muted"><%= comment.created_at.strftime("%d %b. %Y um %H:%M ") %></span>
         <% if (!showAdmin) && (user_signed_in?) %>
             <% if (current_user.id != comment.user_id) && (!comment.notify?) %>
-                <%= link_to 'Melden', comment_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+                <%= link_to t('views.comment.comment.button_notify'), comment_notify_path(:id => comment.id), method: :put,
+                            data: {confirm: t('views.comment.comment.confirm_notify')}, :class => 'pull-right' %>
             <% elsif (current_user.id == comment.user_id) %>
-                <%= link_to 'Löschen', comment_destroy_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'pull-right' %>
+                <%= link_to t('views.comment.comment.button_delete'), comment_destroy_path(:id => comment.id), method: :delete,
+                            data: {confirm: t('views.comment.comment.confirm_delete')}, :class => 'pull-right' %>
             <% end %>
         <% end %>
       </div>
@@ -39,14 +41,13 @@
         <%= simple_format(comment.text, {}, wrapper_tag: "div") %>
         <br/>
         <% if comment.notify? %>
-            <div class="alert alert-warning" role="alert">Dieser Kommentar wurde gemeldet und wird überprüft!</div>
+            <div class="alert alert-warning" role="alert"><%= t('views.comment.comment.alert_notify') %></div>
         <% end %>
-
         <% if showAdmin %>
-            <%= link_to 'Zurücksetzen', comment_reset_notify_path(:id => comment.id), method: :put, data: {confirm: 'Are you sure?'}, :class => 'btn btn-default' %>
-            <%= link_to 'Löschen', comment_destroy_path(:id => comment.id, :redirect => 'admin'), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+            <%= link_to t('views.comment.comment.button_reset'), comment_reset_notify_path(:id => comment.id), method: :put, :class => 'btn btn-default' %>
+            <%= link_to t('views.comment.comment.button_delete'), comment_destroy_path(:id => comment.id, :redirect => 'admin'), method: :delete,
+                        data: {confirm: t('views.comment.comment.confirm_delete')}, :class => 'btn btn-danger' %>
         <% end %>
-
       </div><!-- /panel-body -->
     </div><!-- /panel panel-default -->
   </div><!-- /col-sm-5 -->
