@@ -4,6 +4,7 @@ class AdminController < ApplicationController
   # GET /admin/index
   def index
     @navbar = 'admin'
+    @countcomments = Comment.where(:notify => true).count
   end
 
   # GET /admin/games
