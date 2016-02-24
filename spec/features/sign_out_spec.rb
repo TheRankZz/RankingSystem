@@ -6,22 +6,22 @@ RSpec.feature 'Sign out' do
 
     scenario 'sign out' do
       visit 'home/index'
-      click_link 'LOGIN'
+      click_link 'ANMELDEN'
       fill_in 'user_email', with: user.email
       fill_in 'user_password', with: 'passwort'
 
-      click_button 'Sign in'
+      click_button 'Anmelden'
       #New Profile
-      fill_in 'Username', with: 'Nico3210'
-      fill_in 'Firstname', with: 'Nico'
-      fill_in 'Lastname', with: 'Burchert'
-      click_button 'Update'
-      expect(page).to have_content "Profile was successfully created."
+      fill_in 'Benutzername', with: 'Nico3210'
+      fill_in 'Vorname', with: 'Nico'
+      fill_in 'Nachname', with: 'Burchert'
+      click_button 'Aktualisieren'
+      expect(page).to have_content "Profil wurde erfolgreich erstellt."
 
       page.find(:xpath, "//a[@href='/users/sign_out']").click
 
-      expect(page).to have_content "Signed out successfully."
-      expect(page).to have_content "LOGIN"
+      expect(page).to have_content "Erfolgreich abgemeldet"
+      expect(page).to have_content "ANMELDEN"
     end
   end
 end

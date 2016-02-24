@@ -4,7 +4,7 @@ class UserController < ApplicationController
     #@user.destroy
 
     if @user.destroy
-      redirect_to admin_users_path, notice: "User deleted."
+      redirect_to admin_users_path, notice: "User wurde erfolgreich gelöscht."
     end
   end
 end
