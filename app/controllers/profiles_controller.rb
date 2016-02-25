@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles/new
+  # Wenn man ein neues Profil anlegen will obwohl es schon eins gibt, dann wird man zu "Profil bearbeiten" weitergeleitet.
   def new
     if !current_user.profile.nil?
       redirect_to edit_profile_path(current_user.profile)
