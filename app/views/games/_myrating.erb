@@ -13,18 +13,17 @@
              <h4 class="modal-title" id="myModalLabel"><%= t('views.games.myrating.header') %></h4>
           </div>
           <div class="modal-body">
-
             <div class="row">
-              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.total') %></strong></div>
+              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.fun') %></strong></div>
               <div class="col-md-4">
-                <%= rating_for_user @game, current_user ,"GESAMT", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
+                <%= rating_for_user @game, current_user ,"FUN", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
               </div>
             </div>
-            <hr/>
+            <br>
             <div class="row">
               <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.design') %></strong></div>
               <div class="col-md-4">
-                <%= rating_for_user @game, current_user, "SPIELDESIGN", { star: 5, cancel: true, readonly: false, cancel_place: 'right'  } %>
+                <%= rating_for_user @game, current_user, "DESIGN", { star: 5, cancel: true, readonly: false, cancel_place: 'right'  } %>
               </div>
             </div>
             <br/>
@@ -36,9 +35,9 @@
             </div>
             <br/>
             <div class="row">
-              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.umfang') %></strong></div>
+              <div class="col-md-3 col-md-offset-2"><strong><%= t('views.games.myrating.scope') %></strong></div>
               <div class="col-md-4">
-                <%= rating_for_user @game, current_user, "UMFANG", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
+                <%= rating_for_user @game, current_user, "SCOPE", { star: 5, cancel: true, readonly: false, cancel_place: 'right' } %>
               </div>
             </div>
 

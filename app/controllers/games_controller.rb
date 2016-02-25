@@ -8,7 +8,7 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @navbar = 'list'
-    @games = Game.getAllGamesOrderByRanking
+    @games = Game.allGames
   end
 
   # GET /games/1

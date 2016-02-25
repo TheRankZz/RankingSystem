@@ -5,7 +5,7 @@
           <%= link_to game.title, game %>
         </div>
         <div class="pull-right">
-          <%= rating_for game, "GESAMT",  { readonly: true } %>
+          <%= l game.releasedate, format: :default %>
         </div>
       </li>
   <% end %>

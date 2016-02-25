@@ -23,7 +23,10 @@
               <td class="xs-cut-word"><%= link_to game.title, game %></td>
               <td class="hidden-xs"><%= game.developer %></td>
               <td class="hidden-xs"><%= l game.releasedate, format: :default %></td>
-              <td><%= rating_for game, "GESAMT", {readonly: true} %></td>
+              <td>
+                <%= render_stars(game.TotalRating) %>
+                <%= game.TotalRating %>
+              </td>
               <% if !search %>
                   <td class="hidden-xs" style="width: 50px;"><%= i <= 3 ? '<span class="badge red">TOP</span>'.html_safe : '' %></td>
               <% end %>
