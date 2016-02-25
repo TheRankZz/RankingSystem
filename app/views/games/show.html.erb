@@ -43,14 +43,22 @@
     <%= label_tag(t('activerecord.attributes.game.releasedate')) %>
     <%= l @game.releasedate, format: :default %>
     <br/>
-    <%= label_tag(t('activerecord.models.genre')) %>
-    <% @game.genres.each do |g| %>
-        <%= g.name %> |
+    <%= label_tag(t('activerecord.models.genre')) + ": " %>
+    <% @game.genres.each_with_index do |g, index| %>
+        <% if index == ((@game.genres.length) -1) then %>
+            <%= g.name %>
+        <% else %>
+            <%= g.name + " | " %>
+        <% end %>
     <% end %>
     <br/>
-    <%= label_tag(t('activerecord.models.platform')) %>
-    <% @game.platforms.each do |g| %>
-        <%= g.name %> |
+    <%= label_tag(t('activerecord.models.platform')) + ": " %>
+    <% @game.platforms.each_with_index do |g, index| %>
+        <% if index == ((@game.platforms.length) -1) then %>
+            <%= g.name %>
+        <% else %>
+            <%= g.name + " | " %>
+        <% end %>
     <% end %>
     <br/>
     <br/>
@@ -64,4 +72,4 @@
 <% if user_signed_in? %>
     <%= render 'comment/new', game_id: @game.id, user_id: current_user.id %>
 <% end %>
-<%= render partial: 'comment/comment', collection: @game.comments, locals: { showAdmin: false } %>
+<%= render partial: 'comment/comment', collection: @game.comments, locals: {showAdmin: false} %>
