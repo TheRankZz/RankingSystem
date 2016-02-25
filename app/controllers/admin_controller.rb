@@ -19,7 +19,7 @@ class AdminController < ApplicationController
   def comments
     @navbar = 'admin'
     @comments = Comment.where(:notify => true)
-
+    # Wenn keine gemeldeten Kommentare mehr da sind, wird man zu admin/index geleitet.
     if(@comments.count == 0)
       redirect_to admin_index_path
     end

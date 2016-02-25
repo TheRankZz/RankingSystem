@@ -9,6 +9,7 @@ class CommentController < ApplicationController
 
   # PUT /comment/notify/1
   # PUT /comment/notify/1.json
+  # Ändert den Status eines Kommentars auf gemeldet.
   def notify
     if params[:id]
       @comment = Comment.find(params[:id])
@@ -26,6 +27,7 @@ class CommentController < ApplicationController
 
   # PUT /comment/reset_notify/1
   # PUT /comment/reset_notify/1.json
+  # Ein Kommentar hat nicht mehr den Status gemeldet.
   def reset_notify
     if params[:id]
       @comment = Comment.find(params[:id])

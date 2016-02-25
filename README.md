@@ -8,6 +8,17 @@ Unsere Seite ist unter Heroku zu finden mit der URL
 
 https://therankzz.herokuapp.com
 
+Admin
+```
+email: admin@therankzz.de
+passwort: password
+```
+User
+```
+email: benutzer@therankzz.de
+passwort: password
+```
+
 ***Informationen***
 *   Besucher können sich Registrieren und Kommentare / Informationen zu
     Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
@@ -30,6 +41,7 @@ https://therankzz.herokuapp.com
         - Spieldesign
         - Story/Atmosphäre
         - Umfang
+        - Spielspaß
 
 
 ***Start***
@@ -62,6 +74,7 @@ Einrichten von Postgresql 9.3 auf Linux:
         local   all             all                                     trust
         host    all             all             127.0.0.1/32            trust
         host    all             all             ::1/128                 trust
+    - sudo service postgresql restart
 
 Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und
 folgendes in die console eingeben:
@@ -132,6 +145,7 @@ Um die Tests zu starten folgenden Befehl verwenden:
 
 ```
     - bundle exec rspec spec/'pfad zum Test'
+    Bsp.: bundle exec rspec spec/models/game_add_spec.rb
 ```
 
 Alle Tests sind also im spec Ordner.
