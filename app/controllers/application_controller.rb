@@ -12,10 +12,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :current_password) }
   end
 
-
-  # def after_sign_in_path_for(resource_or_scope)
-  #   new_profile_path
-  # end
+  helper :all
 
   def after_sign_in_path_for(resource_or_scope)
     # Wenn der Benutzer noch kein Profil hat, dann weiterleiten auf profile/create

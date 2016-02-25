@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-xs-5 col-sm-5 col-md-5"><strong><%= t('views.games.show.design') %></strong></div>
       <div class="col-xs-7 col-sm-7 col-md-5">
-        <%= rating_for @game, "SPIELDESIGN", {star: 5, cancel: true, readonly: true} %>
+        <%= rating_for @game, "DESIGN", {star: 5, cancel: true, readonly: true} %>
       </div>
     </div>
     <br/>
@@ -22,9 +22,16 @@
     </div>
     <br/>
     <div class="row">
-      <div class="col-xs-5 col-sm-5 col-md-5"><strong><%= t('views.games.show.umfang') %></strong></div>
+      <div class="col-xs-5 col-sm-5 col-md-5"><strong><%= t('views.games.show.scope') %></strong></div>
       <div class="col-xs-7 col-sm-7 col-md-5">
-        <%= rating_for @game, "UMFANG", {star: 5, cancel: true, readonly: true} %>
+        <%= rating_for @game, "SCOPE", {star: 5, cancel: true, readonly: true} %>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-xs-5 col-sm-5 col-md-5"><strong><%= t('views.games.show.fun') %></strong></div>
+      <div class="col-xs-7 col-sm-7 col-md-5">
+        <%= rating_for @game, "FUN", {readonly: true} %>
       </div>
     </div>
   </div>
@@ -33,7 +40,8 @@
     <h2 class="no-margin-top hidden-xs hidden-sm"><%= @game.title %> <br/>
       <small>von <%= @game.developer %></small>
     </h2>
-    <%= rating_for @game, "GESAMT", {readonly: true} %>
+    <%= render_stars(@game.TotalRating) %>
+    <%= @game.TotalRating %>
     <%= render 'myrating' %>
     <br/>
     <br/>

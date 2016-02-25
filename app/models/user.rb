@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
 
   ratyrate_rater
 
-
   def is?(role)
     roles.include?(role.to_s)
   end

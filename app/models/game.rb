@@ -15,7 +15,7 @@ class Game < ActiveRecord::Base
   has_many :rating_caches, :foreign_key => "cacheable_id", :class_name => "RatingCache"
 
 
-  TYPES = ["GESAMT", "UMFANG", "STORY", "SPIELDESIGN"]
+  TYPES = ["FUN", "SCOPE", "STORY", "DESIGN"]
   ratyrate_rateable *TYPES
 
 
@@ -37,18 +37,23 @@ class Game < ActiveRecord::Base
   end
 
 
-  def self.getGamesWithRanking(dimension: 'GESAMT')
-    includes(:rating_caches).where('rating_caches.dimension LIKE ?', dimension)
-        .order('rating_caches.avg DESC')
+  def TotalRating()
+      rating_caches.getTotalRankingFromGame(self.id)
   end
 
 
-  def self.getAllGamesOrderByRanking()
-    (getGamesWithRanking + all).uniq
+  def self.withRanking()
+    Game.joins("JOIN rating_caches ON rating_caches.cacheable_id = games.id")
+        .group('games.id')
+        .order('avg(avg) DESC')
   end
 
 
-  def self.getGamesOrderByReleaseDate()
+  def self.allGames()
+    (withRanking + all).uniq
+  end
+
+  def self.orderByReleaseDate()
     order('releasedate DESC')
   end
 end

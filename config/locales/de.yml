@@ -122,10 +122,11 @@ de:
       show:
         comments: 'Kommentare'
         button_buy: 'Hier kaufen'
-        umfang: 'Umfang:'
+        scope: 'Umfang:'
         story: 'Story/Atmosphäre:'
         design: 'Spieldesign:'
         total: 'Gesamt:'
+        fun: 'Spielspass'
       new:
         header: 'Neues Spiel anlegen'
       edit:
@@ -136,7 +137,7 @@ de:
         show_link: 'Meine Bewertung'
         header: 'Meine Bewertung'
         button_ok: 'Ok'
-        umfang: 'Umfang:'
+        scope: 'Umfang:'
         story: 'Story/Atmosphäre:'
         design: 'Spieldesign:'
         total: 'Gesamt:'
