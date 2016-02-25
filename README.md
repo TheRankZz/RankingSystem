@@ -8,6 +8,14 @@ Unsere Seite ist unter Heroku zu finden mit der URL
 
 https://therankzz.herokuapp.com
 
+Admin
+email:      admin@therankzz.de
+passwort:   password
+
+User
+email:      benutzer@therankzz.de
+passwort:   passsword
+
 ***Informationen***
 *   Besucher können sich Registrieren und Kommentare / Informationen zu
     Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
@@ -133,6 +141,7 @@ Um die Tests zu starten folgenden Befehl verwenden:
 
 ```
     - bundle exec rspec spec/'pfad zum Test'
+    Bsp.: bundle exec rspec spec/models/game_add_spec.rb
 ```
 
 Alle Tests sind also im spec Ordner.
