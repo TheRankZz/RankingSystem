@@ -116,11 +116,11 @@ Game.create({"title"=>"Mario Kart 8",
              :genre_ids => [8],
              :platform_ids => [7] })
 
-Game.create({"title"=>"The Legand of Zelda: Twilight Princess HD",
+Game.create({"title"=>"The Legend of Zelda: Twilight Princess",
              "description"=>"Eine geheimnisvolle Finsternis hat sich über Hyrule gesenkt und verändert alles, worauf ihre Schatten fallen. Auch der junge Link gerät auf dem Weg zur Ratsversammlung von Hyrule in das unheimliche Zwielicht: Er wird in einen Wolf verwandelt und gefangen genommen. Aber mit Hilfe eines geheimnisvollen Mädchens namens Midna gelingt ihm die Flucht. Unterstützt von ihren Zauberkräften macht er sich auf die Suche nach der Quelle des Unheils, das Hyrule getroffen hat. Mal in Menschen-, mal in Wolfsgestalt durchstreift er die Weiten des Landes. Um Hyrule zu retten, muss er Helfer finden, Wissen und Waffen erwerben, sich durch finstere Verliese kämpfen, vertrackte Rätsel lösen, kurz: sein bisher umfangreichstes Abenteuer bestehen. Werde Teil der Legende!",
              "developer"=>"Nintendo",
              "link"=>"http://www.amazon.de/Legend-Zelda-Twilight-Princess-Wii/dp/B019MOBY4A/ref=sr_1_3?ie=UTF8&qid=1456318869&sr=8-3&keywords=zelda",
-             "releasedate"=>"2016-03-04",
+             "releasedate"=>"2006-11-19",
              :image => File.new(File.join(Rails.root, '/public/images/seed/zelda.jpg')),
              :genre_ids => [1],
              :platform_ids => [6, 7] })

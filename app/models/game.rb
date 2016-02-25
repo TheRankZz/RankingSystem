@@ -31,8 +31,8 @@ class Game < ActiveRecord::Base
 
 
   def self.search(search)
-    joins(:genres).where("title ILIKE ? OR description ILIKE ? OR developer ILIKE ? OR genres.name ILIKE ?",
-                         "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    joins(:genres, :platforms).where("title ILIKE ? OR description ILIKE ? OR developer ILIKE ? OR genres.name ILIKE ? OR platforms.name ILIKE ?",
+                         "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
         .distinct
   end
 
