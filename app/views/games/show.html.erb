@@ -41,14 +41,14 @@
       <small>von <%= @game.developer %></small>
     </h2>
     <%= render_stars(@game.TotalRating) %>
-    <%= @game.TotalRating %>
+    <%= round(@game.TotalRating) %>
     <%= render 'myrating' %>
     <br/>
     <br/>
     <p>
       <%= @game.description %>
     </p>
-    <%= label_tag(t('activerecord.attributes.game.releasedate')) %>
+    <%= label_tag(t('activerecord.attributes.game.releasedate')) + ": "  %>
     <%= l @game.releasedate, format: :default %>
     <br/>
     <%= label_tag(t('activerecord.models.genre')) + ": " %>

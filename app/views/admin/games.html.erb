@@ -25,9 +25,9 @@
         <% @games.each do |game | %>
             <% i = i + 1 %>
             <tr>
-              <td class="xs-cut-word"><%= link_to game.title, game %></td>
+              <td class="xs-cut-word"><%= game.title %></td>
               <td class="hidden-xs"><%= game.developer %></td>
-              <td class="hidden-xs"><%= game.releasedate %></td>
+              <td class="hidden-xs"><%= l game.releasedate, format: :default %></td>
               <td class="text-right">
                 <%= link_to t('views.admin.games.button_edit'), edit_game_path(game) %> |
                 <%= link_to t('views.admin.games.button_delete'), game, method: :delete, data: { confirm: t('views.admin.games.confirm_delete') } %>

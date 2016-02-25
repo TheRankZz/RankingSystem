@@ -71,7 +71,7 @@ div.star {
 @media (max-width: 767px) {
   .navbar-nav.pull-right { float: none!important; }
   .xs-cut-word > a{
-    width: 200px !important;
+    width: 160px !important;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -101,7 +101,6 @@ div.star {
     border: 1px solid #16a085;
   }
 }
-
 
 .footer {
   position: fixed;

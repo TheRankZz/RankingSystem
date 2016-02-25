@@ -25,11 +25,8 @@
               <td class="hidden-xs"><%= l game.releasedate, format: :default %></td>
               <td>
                 <%= render_stars(game.TotalRating) %>
-                <%= game.TotalRating %>
+                <%= round(game.TotalRating) %>
               </td>
-              <% if !search %>
-                  <td class="hidden-xs" style="width: 50px;"><%= i <= 3 ? '<span class="badge red">TOP</span>'.html_safe : '' %></td>
-              <% end %>
             </tr>
         <% end %>
         </tbody>

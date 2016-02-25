@@ -2,16 +2,15 @@
 <%= form_for(@game, multipart: true) do |f| %>
   <% if @game.errors.any? %>
     <div class="alert alert-danger" role="alert" id="error_explanation">
-      <strong><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</strong>
+      <strong><%= t('errors.template.body') %></strong>
+      <ul>
+        <% @game.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 
-<div class="page-header">
-
-  <%= link_to t('views.games.form.button_cancel'), admin_games_path, :class => "btn btn-danger" %>
-
-  <%= f.submit t('views.games.form.button_submit'), :class => 'btn btn-primary' %>
-</div>
 <div class="row">
   <div class="col-md-4">
     <% if !@game.nil? && !@game.new_record? %>
@@ -39,11 +38,13 @@
 
     <div class="form-group">
       <%= f.label :releasedate %>
-      <%= f.text_field :releasedate, :class => "form-control datepicker" %>
+      <div class="form-inline">
+      <%= f.date_select :releasedate, { :start_year => 1990 }, { :class => "form-control" } %>
+      </div>
     </div>
 
     <div class="form-group">
-      <%= f.label :link %>
+      <%= f.label :link %> <i><%= t('views.games.form.link_info') %></i>
       <%= f.text_field :link, :class => "form-control" %>
     </div>
 
@@ -68,18 +69,10 @@
           </div>
       <% end %>
     </div>
-
+    <div style="text-align: right;" class="form-group">
+      <%= link_to t('views.games.form.button_cancel'), admin_games_path, :class => "btn btn-danger" %>
+      <%= f.submit t('views.games.form.button_submit'), :class => 'btn btn-primary' %>
+    </div>
   </div>
 </div>
 <% end %>
-
-<script>
-  $('.datepicker').datepicker({
-    startView: 1,
-    language: "de",
-    orientation: "bottom left",
-    autoclose: true,
-    defaultViewDate: { year: 2016, month: 01, day: 01 },
-    format: "dd.mm.yyyy"
-  })
-</script>

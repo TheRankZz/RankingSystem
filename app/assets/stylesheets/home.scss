@@ -8,3 +8,12 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@media (max-width: 767px) {
+  .cut-word {
+    width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

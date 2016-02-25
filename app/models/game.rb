@@ -20,11 +20,11 @@ class Game < ActiveRecord::Base
 
 
   # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
-  #validates_attachment :image, :presence => true,
-  #                     :content_type => { :content_type => /\Aimage\/.*\Z/ }
+  validates_attachment :image, :presence => true,
+                      :content_type => { :content_type => /\Aimage\/.*\Z/ }
 
   # Erst einmal wird das Bild nicht mehr validiert.
-  do_not_validate_attachment_file_type :image
+  # do_not_validate_attachment_file_type :image
 
   validates :link, format: %r|\Ahttp(s?)://www.amazon.de/|
   validates :genres, :platforms, :title, :developer, presence: true
@@ -38,9 +38,12 @@ class Game < ActiveRecord::Base
 
 
   def TotalRating()
-      rating_caches.getTotalRankingFromGame(self.id)
+      rating_caches.getTotalRankingFromGame
   end
 
+  def QuantityRating()
+    rating_caches.getQuantityRating
+  end
 
   def self.withRanking()
     Game.joins("JOIN rating_caches ON rating_caches.cacheable_id = games.id")
