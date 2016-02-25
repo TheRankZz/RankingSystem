@@ -39,10 +39,10 @@ production:
 #  <<: *default
   adapter: postgresql
   encoding: unicode
-  database: project_production
+  database: d32t99bbiadbqf
   pool: 5
-  username: pguser
-  password: passwort
+  username: ywyogibhxfxyeg
+  password: NwfbNUJTtSGrC86SxnSbxCXyrA
 
 
 
