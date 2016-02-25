@@ -9,11 +9,16 @@ Unsere Seite ist unter Heroku zu finden mit der URL
 https://therankzz.herokuapp.com
 
 Admin
+
 email:      admin@therankzz.de
+
 passwort:   password
+__________________________________
 
 User
+
 email:      benutzer@therankzz.de
+
 passwort:   passsword
 
 ***Informationen***
