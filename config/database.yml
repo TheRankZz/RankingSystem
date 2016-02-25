@@ -39,6 +39,7 @@ production:
 #  <<: *default
   adapter: postgresql
   encoding: unicode
+  host: ec2-46-137-125-22.eu-west-1.compute.amazonaws.com
   database: d32t99bbiadbqf
   pool: 5
   username: ywyogibhxfxyeg
