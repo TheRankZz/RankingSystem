@@ -21,7 +21,7 @@
 #de.activerecord.errors.models.user.attributes.current_password.blank
 de:
   date:
-      abbr_day_names:
+    abbr_day_names:
       - So
       - Mo
       - Di
@@ -29,7 +29,7 @@ de:
       - Do
       - Fr
       - Sa
-      abbr_month_names:
+    abbr_month_names:
       -
       - Jan
       - Feb
@@ -43,7 +43,7 @@ de:
       - Okt
       - Nov
       - Dez
-      day_names:
+    day_names:
       - Sonntag
       - Montag
       - Dienstag
@@ -51,11 +51,11 @@ de:
       - Donnerstag
       - Freitag
       - Samstag
-      formats:
-        default: "%d.%m.%Y"
-        long: "%e. %B %Y"
-        short: "%e. %b"
-      month_names:
+    formats:
+      default: "%d.%m.%Y"
+      long: "%e. %B %Y"
+      short: "%e. %b"
+    month_names:
       -
       - Januar
       - Februar
@@ -69,7 +69,7 @@ de:
       - Oktober
       - November
       - Dezember
-      order:
+    order:
       - :day
       - :month
       - :year

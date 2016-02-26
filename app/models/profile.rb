@@ -11,6 +11,6 @@ class Profile < ActiveRecord::Base
   # Erst einmal wird das Bild nicht mehr validiert.
   # do_not_validate_attachment_file_type :image
 
-  validates_attachment :image, :presence => true,
+  validates_attachment :image,
                        :content_type => { :content_type => /\Aimage\/.*\Z/ }
 end

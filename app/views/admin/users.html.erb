@@ -24,7 +24,7 @@
             <% end %>
           </td>
           <td class="hidden-xs">
-            <%= user.current_sign_in_at.strftime("%d %b. %Y um %H:%M ") %>
+            <%= (!user.current_sign_in_at.nil?) ? user.current_sign_in_at.strftime("%d %b. %Y um %H:%M ") : '-' %>
           </td>
           <td class="text-right" >
             <% if (current_user.id != user.id) && (current_user.has_role? :admin) %>

@@ -24,6 +24,7 @@ module ApplicationHelper
       # handle 0.5 then change back to ==)
       if (value - floored) >= 0.5
         output << image_tag('star-half.png')
+        # Fehler gefixt, dass ein Stern zu viel bei x.5 Sternen angezeigt wird.
         floored = floored + 1
       end
 
@@ -34,8 +35,6 @@ module ApplicationHelper
       (5 - floored).times { output << image_tag('star-off.png') }
       output.html_safe
   end
-
-
 
   def round(value, count = 1)
     if !value.nil?
