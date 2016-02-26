@@ -70,6 +70,7 @@ Game.create({"title"=>"FIFA 16",
               :image => File.new(File.join(Rails.root, '/public/images/seed/witcher.jpg')),
               :genre_ids => [1],
               :platform_ids => [1, 3, 5] })
+
  Game.create({"title"=>"Fallout 4",
               "description"=>"Fallout 4 ist ein postapokalyptisches Open-World-Rollenspiel von Bethesda Game Studios. Es siedelt sich 200 Jahre nach einem Atomkrieg in dem Gebiet um das nahezu vernichtete Boston in Nordamerika an. Spieler schlüpfen in die Rolle des einzigen Überlebenden des Schutzbunkers Vault 111, der aus dem Kälteschlaf erwacht und in dem Ödland um das Überleben kämpfen muss. Dabei ähnelt das nicht-lineare Gameplay dem von Fallout 3 (2008) und Fallout: New Vegas (2010), wurde in vieler Hinsicht aber überarbeitet und ausgebaut. Erneut kann zwischen der First-Person- und der Third-Person-Perspektive ausgewählt werden, wobei während der Gefechte durch das bewährte V.A.T.S.-Kampfsystem auch filmische Kamerawinkel zum Einsatz kommen. Mit dem S.P.E.C.I.A.L. getauften Charaktersystem lassen sich Spielfiguren mit einer Auswahl von hunderten Eigenschaften und Extras entwickeln, die vom kampferprobten Soldaten bis hin zum charismatischen Überredungskünstler reichen können. Hinzu kommen etliche Möglichkeiten in der Herstellung von Waffen, Rüstungen oder auch Chemikalien und Nahrung. Als Grafikgerüst für Fallout 4 dient Bethesdas hauseigene Creation Engine.",
               "developer"=>"Bethesda",
@@ -143,7 +144,7 @@ Game.create({"title"=>"Call of Duty: Back Ops III",
              :genre_ids => [2],
              :platform_ids => [1, 2, 3, 4, 5] })
 
-Game.create({"title"=>"Just cause 3",
+Game.create({"title"=>"Just Cause 3",
              "description"=>"JUST CAUSE 3 ist ein weitläufiges Open-World-Action-Adventure und der neuste Teil der sehr beliebten JUST CAUSE-Serie.
 Epische Open World Action trifft auf Zerstörung und Chaos in einem traumhaften Inselparadies! Schnapp dir den Wingsuit & Grapple-Hook um durch die Lüfte zu gleiten und über Berge hinwegzuschießen. Greife auf dein unerschöpfliches Waffenarsenal zu, egal ob Maschinengewehre, Handfeuerwaffen, Granaten, Raketenwerfer oder C4 - spektakuläre Verwüstung ist garantiert! Steuere 80 verschiedene Fahrzeuge zu Land, zu Wasser und in der Luft..",
              "developer"=>"Square Enix",

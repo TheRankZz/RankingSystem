@@ -204,7 +204,7 @@ de:
       edit:
         header: 'Spiel bearbeiten'
       index:
-        header: 'Bestenliste'
+        header: 'Spieleliste'
       myrating:
         show_link: 'Meine Bewertung abgeben'
         header: 'Meine Bewertung'
