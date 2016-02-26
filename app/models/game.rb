@@ -20,7 +20,7 @@ class Game < ActiveRecord::Base
 
 
   # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
-  validates_attachment :image, :presence => true,
+  validates_attachment :image,
                       :content_type => { :content_type => /\Aimage\/.*\Z/ }
 
   # Erst einmal wird das Bild nicht mehr validiert.
