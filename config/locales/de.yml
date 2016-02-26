@@ -169,7 +169,7 @@ de:
       nav:
         home: 'HOME'
         search: 'SUCHE'
-        list: 'BESTENLISTE'
+        list: 'SPIELELISTE'
         admin: 'VERWALTUNG'
         edit_user: 'Kontoeinstellungen'
         edit_profile: 'Profil bearbeiten'
