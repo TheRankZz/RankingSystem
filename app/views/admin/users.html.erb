@@ -28,8 +28,7 @@
           </td>
           <td class="text-right" >
             <% if (current_user.id != user.id) && (current_user.has_role? :admin) %>
-                <%= link_to t('views.admin.users.button_delete'), admin_destroy_user_path(user), method: :delete,
-                            data: {confirm: t('views.admin.users.confirm_delete')} %>
+                <%= link_to t('views.admin.users.button_delete'), admin_destroy_user_path(user), method: :delete %>
             <% end %>
           </td>
         </tr>
