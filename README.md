@@ -1,36 +1,36 @@
 # RankingSystem
 
-RankingSystem ist eine Webseite zum Informieren und Bewerten von Spielen.
+RankingSystem ist eine Webseite zum informieren, bewerten und kommentieren von Spielen.
 
-***Heroku***
+***Online Demo***
 
-Unsere Seite ist unter Heroku zu finden mit der URL
+Unsere Seite ist unter Heroku zu finden mit folgender URL:
 
 https://therankzz.herokuapp.com
 
 Admin
 ```
 email: admin@therankzz.de
-passwort: password
+passwort: admin123
 ```
-User
+Benutzer
 ```
 email: benutzer@therankzz.de
-passwort: password
+passwort: benutzer123
 ```
 
 ***Informationen***
 
 *   Besucher können ...
-    - Spiele anzeigen lassen
-    - Kommentare sehen
+    - Spiele anzeigen
+    - Kommentare lesen
     - nach Spielen suchen
     - sich registrieren
 
 *   Benutzer können ...
-    - alles was ein Besucher kann
+    - alles was ein Besucher auch kann
     - Spiele bewerten
-    - Kommentare abgeben
+    - Kommentare zu Spielen abgeben
     - Kommentare von anderen Benutzern melden
     - eigene Kommentare löschen
     - sich anmelden/abmelden
@@ -39,10 +39,10 @@ passwort: password
 
 *   Admin kann ...
     - alles was ein Benutzer kann
-    - sich Benutzer anzeigen lassen
+    - Benutzer anzeigen
     - andere Benutzer löschen
-    - Spiele anlegen/bearbeiten/löschen
-    - sich gemeldete Kommentare anzeigen
+    - Spiele anlegen, bearbeiten und löschen
+    - gemeldete Kommentare anzeigen
     - gemeldete Kommentare zurücksetzen oder löschen
 
 *   Spiele können nach folgenden Kriterien bewertet werden:
@@ -52,11 +52,13 @@ passwort: password
         - Umfang
         - Spielspaß
 
+    Die Gesamtbewertung wird automatisch aus den benanten Kriterien ermittelt.
+
 
 ***Start***
 *   RankingSystem 1.0 arbeitet mit der Rails 4.2.5.1 und mit der Ruby Version
     2.3.0.
-*   Damit RankingSystem fehlerfrei läuft müssen Sie folgendes beachten:
+*   Damit RankingSystem fehlerfrei läuft, muss folgendes beachtet werden:
 
         - Imagemagick 6.7.7 installieren
         - Postgresql 9.3 installieren
@@ -124,21 +126,21 @@ folgendes in die console eingeben:
 
 ```
 
-*   um Bilder hochzuladen
+*   Bildupload
 
 ```
     - gem 'paperclip', '4.3.5'
 
 ```
 
-*   um zu Bewerten
+*   Bewertung
 
 ```
     - gem 'ratyrate', '1.2.2.alpha'
 
 ```
 
-*   für User, Rechte, Profile
+*   Anmeldung, Registrieren und Rollenberechtigung
 
 ```
     - gem 'devise'
@@ -156,7 +158,7 @@ Um die Tests zu starten folgenden Befehl verwenden:
     Bsp.: bundle exec rspec spec/models/game_add_spec.rb
 ```
 
-Alle Tests sind also im spec Ordner.
+Alle Tests sind im spec Ordner.
 
 ***User Story***
 
@@ -165,9 +167,11 @@ Liegt als PDF im Hauptverzeichnis.
 
 ***Ausblick***
 
-Wenn man einen Kommentar meldet kann man einen Grund angeben.
+    - Wenn man einen Kommentar meldet, kann man einen Grund angeben.
 
-Es gibt einen Super-Admin, der andere Admins löschen kann(impliziert, dass es mehrere Admins geben kann).
+    - Es gibt einen Super-Admin, der andere Admins löschen kann(impliziert, dass es mehrere Admins geben kann).
 
-Admin kann Benutzer sperren/entsperren
+    - Admin kann Benutzer sperren/entsperren
+
+    - Kommentare kommentieren
 

@@ -24,11 +24,11 @@ User.destroy_all
 # User
 #---------------------------------------------------------------------------------
 admin = User.create ({ email: 'admin@therankzz.de', password: "password",
-                      password_confirmation: "password"})
+                      password_confirmation: "admin123"})
 admin.add_role :admin
 
 benutzer = User.create ({ email: 'benutzer@therankzz.de', password: "password",
-              password_confirmation: "password"})
+              password_confirmation: "benutzer123"})
 
 
 #---------------------------------------------------------------------------------
