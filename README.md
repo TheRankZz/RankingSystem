@@ -20,21 +20,30 @@ passwort: password
 ```
 
 ***Informationen***
-*   Besucher können sich Registrieren und Kommentare / Informationen zu
-    Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
-    
-*   Auf der Home Seite können Besucher die neusten hinzugefügten Spiele sehen
-    und die Spiele die am besten bewertet sind
-*   Besucher können entweder alle Spiele sehen, oder auch nach einzelnen
-    Spielen suchen
 
-*   Man kann Spiele nicht nur nach Namen filtern, sondern auch nach Genre,
-    Hersteller und Beschreibung
+*   Besucher
+    - können Spiele anzeigen lassen
+    - können Kommentare sehen
+    - können nach Spielen suchen
+    - können sich registrieren
     
-*   Eigenen Admin Bereich
-
-*   Besucher haben die Möglichkeit ein eigenes Profil zu erstellen
-    (Profilbild, Username, Vorname, Nachname)
+*   Benutzer
+    - können alles was ein Besucher kann
+    - können Spiele bewerten
+    - können Kommentare erstellen
+    - können Kommentare von anderen Benutzern melden
+    - können eigene Kommentare löschen
+    - können sich anmelden/abmelden
+    - können ein Profil anlegen/bearbeiten
+    - können ihr Konto bearbeiten/löschen
+    
+*   Admin
+    - kann alles was ein Benutzer kann
+    - kann sich Benutzer anzeigen lassen
+    - kann andere Benutzer löschen
+    - kann Spiele anlegen/bearbeiten/löschen
+    - kann sich gemeldete Kommentare anzeigen
+    - kann gemeldete Kommentare zurücksetzen oder löschen
 
 *   Spiele können nach folgenden Kriterien bewertet werden:
 
@@ -96,7 +105,6 @@ folgendes in die console eingeben:
     - gem 'sass-rails', '~> 5.0'
     - gem 'uglifier', '>= 1.3.0'
     - gem 'coffee-rails', '~> 4.1.0'
-    - gem 'bootstrap-datepicker-rails'
     - gem 'jquery-rails'
     - gem 'turbolinks'
     - gem 'jbuilder', '~> 2.0'

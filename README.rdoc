@@ -8,28 +8,49 @@ Unsere Seite ist unter Heroku zu finden mit der URL
 
 https://therankzz.herokuapp.com
 
+Admin
+```
+email: admin@therankzz.de
+passwort: password
+```
+User
+```
+email: benutzer@therankzz.de
+passwort: password
+```
+
 ***Informationen***
-*   Besucher können sich Registrieren und Kommentare / Informationen zu
-    Spielen lesen und Kommentare zu den jeweiligen Spielen schreiben
 
-*   Auf der Home Seite können Besucher die neusten hinzugefügten Spiele sehen
-    und die Spiele die am besten bewertet sind
-*   Besucher können entweder alle Spiele sehen, oder auch nach einzelnen
-    Spielen suchen
+*   Besucher
+    - können Spiele anzeigen lassen
+    - können Kommentare sehen
+    - können nach Spielen suchen
+    - können sich registrieren
 
-*   Man kann Spiele nicht nur nach Namen filtern, sondern auch nach Genre,
-    Hersteller und Beschreibung
+*   Benutzer
+    - können alles was ein Besucher kann
+    - können Spiele bewerten
+    - können Kommentare erstellen
+    - können Kommentare von anderen Benutzern melden
+    - können eigene Kommentare löschen
+    - können sich anmelden/abmelden
+    - können ein Profil anlegen/bearbeiten
+    - können ihr Konto bearbeiten/löschen
 
-*   Eigenen Admin Bereich
-
-*   Besucher haben die Möglichkeit ein eigenes Profil zu erstellen
-    (Profilbild, Username, Vorname, Nachname)
+*   Admin
+    - kann alles was ein Benutzer kann
+    - kann sich Benutzer anzeigen lassen
+    - kann andere Benutzer löschen
+    - kann Spiele anlegen/bearbeiten/löschen
+    - kann sich gemeldete Kommentare anzeigen
+    - kann gemeldete Kommentare zurücksetzen oder löschen
 
 *   Spiele können nach folgenden Kriterien bewertet werden:
 
         - Spieldesign
         - Story/Atmosphäre
         - Umfang
+        - Spielspaß
 
 
 ***Start***
@@ -62,6 +83,7 @@ Einrichten von Postgresql 9.3 auf Linux:
         local   all             all                                     trust
         host    all             all             127.0.0.1/32            trust
         host    all             all             ::1/128                 trust
+    - sudo service postgresql restart
 
 Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und
 folgendes in die console eingeben:
@@ -83,7 +105,6 @@ folgendes in die console eingeben:
     - gem 'sass-rails', '~> 5.0'
     - gem 'uglifier', '>= 1.3.0'
     - gem 'coffee-rails', '~> 4.1.0'
-    - gem 'bootstrap-datepicker-rails'
     - gem 'jquery-rails'
     - gem 'turbolinks'
     - gem 'jbuilder', '~> 2.0'
@@ -132,6 +153,7 @@ Um die Tests zu starten folgenden Befehl verwenden:
 
 ```
     - bundle exec rspec spec/'pfad zum Test'
+    Bsp.: bundle exec rspec spec/models/game_add_spec.rb
 ```
 
 Alle Tests sind also im spec Ordner.
