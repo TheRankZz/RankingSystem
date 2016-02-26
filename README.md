@@ -21,29 +21,29 @@ passwort: password
 
 ***Informationen***
 
-*   Besucher
-    - können Spiele anzeigen lassen
-    - können Kommentare sehen
-    - können nach Spielen suchen
-    - können sich registrieren
+*   Besucher können
+    - Spiele anzeigen lassen
+    - Kommentare sehen
+    - nach Spielen suchen
+    - sich registrieren
     
-*   Benutzer
-    - können alles was ein Besucher kann
-    - können Spiele bewerten
-    - können Kommentare erstellen
-    - können Kommentare von anderen Benutzern melden
-    - können eigene Kommentare löschen
-    - können sich anmelden/abmelden
-    - können ein Profil anlegen/bearbeiten
-    - können ihr Konto bearbeiten/löschen
+*   Benutzer können
+    - alles was ein Besucher kann
+    - Spiele bewerten
+    - Kommentare abgeben
+    - Kommentare von anderen Benutzern melden
+    - eigene Kommentare löschen
+    - sich anmelden/abmelden
+    - ein Profil anlegen/bearbeiten
+    - ihr Konto bearbeiten/löschen
     
-*   Admin
-    - kann alles was ein Benutzer kann
-    - kann sich Benutzer anzeigen lassen
-    - kann andere Benutzer löschen
-    - kann Spiele anlegen/bearbeiten/löschen
-    - kann sich gemeldete Kommentare anzeigen
-    - kann gemeldete Kommentare zurücksetzen oder löschen
+*   Admin kann
+    - alles was ein Benutzer kann
+    - sich Benutzer anzeigen lassen
+    - andere Benutzer löschen
+    - Spiele anlegen/bearbeiten/löschen
+    - sich gemeldete Kommentare anzeigen
+    - gemeldete Kommentare zurücksetzen oder löschen
 
 *   Spiele können nach folgenden Kriterien bewertet werden:
 
@@ -158,6 +158,11 @@ Um die Tests zu starten folgenden Befehl verwenden:
 
 Alle Tests sind also im spec Ordner.
 
+***Ausblick***
 
+Wenn man einen Kommentar meldet kann man einen Grund angeben.
 
+Es gibt einen Super-Admin, der andere Admins löschen kann(impliziert, dass es mehrere Admins geben kann).
+
+Admin kann Benutzer sperren/entsperren
 
