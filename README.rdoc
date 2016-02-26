@@ -21,13 +21,13 @@ passwort: password
 
 ***Informationen***
 
-*   Besucher können
+*   Besucher können..
     - Spiele anzeigen lassen
     - Kommentare sehen
     - nach Spielen suchen
     - sich registrieren
 
-*   Benutzer können
+*   Benutzer können..
     - alles was ein Besucher kann
     - Spiele bewerten
     - Kommentare abgeben
@@ -37,7 +37,7 @@ passwort: password
     - ein Profil anlegen/bearbeiten
     - ihr Konto bearbeiten/löschen
 
-*   Admin kann
+*   Admin kann..
     - alles was ein Benutzer kann
     - sich Benutzer anzeigen lassen
     - andere Benutzer löschen
