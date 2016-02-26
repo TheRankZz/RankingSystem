@@ -2,7 +2,10 @@ class Game < ActiveRecord::Base
   has_attached_file :image, styles: {
       thumb: '48x48#',
       medium: '250x300#'
-  }
+  }, :storage => :dropbox,
+                    :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+                    :dropbox_visibility => 'public',
+                    :path => ":style/:id_:filename"
 
   has_many :game_genres, :dependent  => :delete_all
   has_many :genres, through: :game_genres

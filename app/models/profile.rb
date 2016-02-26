@@ -3,7 +3,12 @@ class Profile < ActiveRecord::Base
       icon: '64x64#',
       thumb: '128x128#',
       medium: '200x200#'
-  }, :default_url => "/images/profile/unknown.png"
+  }, :default_url => "/images/profile/unknown.png",
+                    :storage => :dropbox,
+                    :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+                    :dropbox_visibility => 'public',
+                    :path => ":style/:id_:filename"
+
 
   belongs_to :user, :class_name => 'User', :foreign_key => 'user_id'
 

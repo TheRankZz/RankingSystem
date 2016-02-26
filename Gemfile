@@ -46,6 +46,8 @@ gem 'devise', '3.5.6'
 gem 'ratyrate', '1.2.2.alpha'
 gem 'rolify', '5.0.0'
 gem 'cancan', '1.6.10'
+gem 'paperclip-dropbox'
+
 
 # nico rspec Tests
 group :development, :test do
