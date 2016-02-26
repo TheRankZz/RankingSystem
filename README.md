@@ -26,7 +26,7 @@ passwort: password
     - Kommentare sehen
     - nach Spielen suchen
     - sich registrieren
-    
+
 *   Benutzer können..
     - alles was ein Besucher kann
     - Spiele bewerten
@@ -36,7 +36,7 @@ passwort: password
     - sich anmelden/abmelden
     - ein Profil anlegen/bearbeiten
     - ihr Konto bearbeiten/löschen
-    
+
 *   Admin kann..
     - alles was ein Benutzer kann
     - sich Benutzer anzeigen lassen
@@ -57,7 +57,7 @@ passwort: password
 *   RankingSystem 1.0 arbeitet mit der Rails 4.2.5.1 und mit der Ruby Version
     2.3.0.
 *   Damit RankingSystem fehlerfrei läuft müssen Sie folgendes beachten:
-       
+
         - Imagemagick 6.7.7 installieren
         - Postgresql 9.3 installieren
 
@@ -157,6 +157,11 @@ Um die Tests zu starten folgenden Befehl verwenden:
 ```
 
 Alle Tests sind also im spec Ordner.
+
+***User Story***
+
+Liegt als PDF im Hauptverzeichnis.
+
 
 ***Ausblick***
 
