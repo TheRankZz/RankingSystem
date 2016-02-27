@@ -95,7 +95,6 @@ folgendes in die console eingeben:
     - rake db:create
     - rake db:migrate
     - rake db:seed
-
 ```
 
 **Übersicht über die wichtigsten Gems und Funktionen**
@@ -111,7 +110,6 @@ folgendes in die console eingeben:
     - gem 'turbolinks'
     - gem 'jbuilder', '~> 2.0'
     - gem 'sdoc', '~> 0.4.0'
-
 ```
 
 *   Für RSpec Tests
@@ -123,22 +121,20 @@ folgendes in die console eingeben:
     - gem 'guard-rspec'
     - gem 'faker'
     - gem 'capybara'
-
 ```
 
 *   Bildupload
 
 ```
     - gem 'paperclip', '4.3.5'
-    - paperclip-dropbox, '1.3.2' -> Damit die Bilder auf Heroku dauerhaft angezeigt werden, speichern wir die Bilder in der Dropbox.
-
+    - paperclip-dropbox, '1.3.2'
+        -> Damit die Bilder auf Heroku dauerhaft angezeigt werden, speichern wir die Bilder in der Dropbox.
 ```
 
 *   Bewertung
 
 ```
     - gem 'ratyrate', '1.2.2.alpha'
-
 ```
 
 *   Anmeldung, Registrieren und Rollenberechtigung
@@ -147,7 +143,6 @@ folgendes in die console eingeben:
     - gem 'devise'
     - gem 'cancan'
     - gem 'rolify'
-
 ```
 
 ***Tests***
