@@ -46,7 +46,8 @@ gem 'devise', '3.5.6'
 gem 'ratyrate', '1.2.2.alpha'
 gem 'rolify', '5.0.0'
 gem 'cancan', '1.6.10'
-gem 'paperclip-dropbox'
+# Nur für Heroku, damit die Bilder dauerhaft gespeichert werden.
+#gem 'paperclip-dropbox', '1.3.2'
 
 
 # nico rspec Tests

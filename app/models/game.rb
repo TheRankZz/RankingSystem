@@ -2,10 +2,18 @@ class Game < ActiveRecord::Base
   has_attached_file :image, styles: {
       thumb: '48x48#',
       medium: '250x300#'
-  }, :storage => :dropbox,
-                    :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
-                    :dropbox_visibility => 'public',
-                    :path => ":style/:id_:filename"
+  }
+
+# Nur für Heroku, damit die Bilder dauerhaft gespeichert werden.
+#   has_attached_file :image, styles: {
+#       thumb: '48x48#',
+#       medium: '250x300#'
+#   }, :storage => :dropbox,
+#                     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+#                     :dropbox_visibility => 'public',
+#                     :path => ":style/:id_:filename"
+
+
 
   has_many :game_genres, :dependent  => :delete_all
   has_many :genres, through: :game_genres
@@ -21,15 +29,11 @@ class Game < ActiveRecord::Base
   TYPES = ["FUN", "SCOPE", "STORY", "DESIGN"]
   ratyrate_rateable *TYPES
 
-
-  # Auskommentiert, weil unter Windows Probleme beim hochladen von Bildern besteht.
   validates_attachment :image,
                       :content_type => { :content_type => /\Aimage\/.*\Z/ }
 
-  # Erst einmal wird das Bild nicht mehr validiert.
-  # do_not_validate_attachment_file_type :image
-
   validates :link, format: %r|\Ahttp(s?)://www.amazon.de/|
+
   validates :genres, :platforms, :title, :developer, presence: true
 
 

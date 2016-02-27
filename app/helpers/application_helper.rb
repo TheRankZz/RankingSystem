@@ -24,7 +24,7 @@ module ApplicationHelper
       # handle 0.5 then change back to ==)
       if (value - floored) >= 0.5
         output << image_tag('star-half.png')
-        # Fehler gefixt, dass ein Stern zu viel bei x.5 Sternen angezeigt wird.
+        # Fehler gefixt, da ein Stern zu viel bei x.5 Sternen angezeigt wurde.
         floored = floored + 1
       end
 

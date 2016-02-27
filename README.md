@@ -130,6 +130,7 @@ folgendes in die console eingeben:
 
 ```
     - gem 'paperclip', '4.3.5'
+    - paperclip-dropbox, '1.3.2' -> Damit die Bilder auf Heroku dauerhaft angezeigt werden, speichern wir die Bilder in der Dropbox.
 
 ```
 
