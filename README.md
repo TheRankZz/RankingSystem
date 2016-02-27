@@ -88,7 +88,7 @@ Einrichten von Postgresql 9.3 auf Linux:
     - sudo service postgresql restart
 
 Nachdem Einrichten von Postgresql 9.3 in das Projektverzeichnis wechseln und
-folgendes in die console eingeben:
+folgendes in die Konsole eingeben:
 
 ```
     - bundle install
